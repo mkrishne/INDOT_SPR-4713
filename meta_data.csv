@@ -1,0 +1,28 @@
+﻿Day,Date,Weekday,Operator,Number of passes,Cummulative Number of Passes,Room Temp (F),Pavement Temp  (F),Input Axel Load,Measured Axel Load (lb),Plug-in Axel Load (kips),Run Number,Notes
+1,7-Jul,Thursday,Oscar,500,500,69,63,4250,9150,8.14,5,
+2,8-Jul,Friday,Oscar,500,1000,69,63,,,,4,Sensor data was not saved
+3,11-Jul,Monday,Oscar,1000,2000,70,65,4800,9000,7.535,6,
+4,12-Jul,Tuesday,Oscar,1000,3000,69,63,3600,9090,8.046,7,
+5,13-Jul,Wednesday,Oscar,1000,4000,71,66,4200,9100,8.198,8,
+6,14-Jul,Thursday,Oscar,1000,5000,69,65,4100,9000,8.141,9,News crew showed up
+7,15-Jul,Friday,Oscar,1000,6000,62,58,4500,9000,8.122,10,
+8,18-Jul,Monday,Oscar,1000,7000,62,57,3900,8950,7.914,11,
+9,19-Jul,Tuesday,Oscar,1000,8000,71,67,4100,9000,8.141,12,
+10,20-Jul,Wednesday,Oscar,1000,9000,72,67,4000,9100,8.046,13,Slow travling during the first 20 cylces
+11,21-Jul,Thursday,Oscar,1000,10000,72,69,4100,9070,8.008,9,Slow travling during the first 20 cylces- Late strat due to power software installation on Behnam's machie
+12,22-Jul,Friday,Oscar,1000,11000,74,68,4000,8930,7.952,254,The power unit gets started after hitting OK on the software
+13,26-Jul,Tuesday,Oscar,1000,12000,73,68,3800,8990,7.952,255,
+14,27-Jul,Wednesday,Behnam,1000,13000,73,69,3600,9000,8,256,I got fault error when scanning the profile after F20
+15,28-Jul,Thursday,Behnam,1000,14000,75,71,3800,9060,8.008,257,
+16,1-Aug,Monday,Behnam,1000,15000,74,73,3600,9050,8.008,258,
+17,2-Aug,Tuesday,Behnam,1000,16000,77,68,3400,8960,7.876,259,The tires stoped with no reason at the end of the section on west and I had to reset everything to continue
+,3-Aug,Wednesday,Behnam,0,16000,75,67,3400,9000,8.008,,I could not start the test as INDOT has been closed and I did not know about that. The issue was water shut off
+18,4-Aug,Thursday,Behnam,1000,17000,73,68,3400,9000,8.008,260,Water was on the surface 
+19,9-Aug,Tuesday,Behnam,1000,18000,75,67,3500,9000,8.008,261,
+20,10-Aug,Wednesday,Behnam,1000,19000,78,72,3500,9000,8.008,262,Brent was putting grease on APT
+21,11-Aug,Thursday,Behnam,1000,20000,75,68,3500,9000,8.008,263,
+22,17-Aug,Wednesday,Behnam,1000,21000,73,68,3500,9000,8.008,264,Rafael and Mauricio visited
+23,18-Aug,Thursday,Behnam,1000,22000,73,68,3500,9000,8.008,265,
+24,22-Aug,Monday,Behnam,1000,23000,71,64,3600,9000,8.008,266,
+25,23-Aug,Tuesday,Behnam,1000,24000,72,64,3600,9000,8.008,267,
+26,24-Aug,Wednesday,Behnam,1000,25000,73,66,3600,9000,8.008,267,
