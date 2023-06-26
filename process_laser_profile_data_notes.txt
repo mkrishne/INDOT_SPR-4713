@@ -1,0 +1,33 @@
+on Dell laptop with Intel(R) Core(TM) i7-6560U CPU @ 2.20GHz   2.20 GHz, 16.0 GB (15.9 GB usable) RAM and 64-bit operating system, x64-based processor
+The process_laser_profile_data.py did not run in the 25 iterations in a single run with 
+laser_profile_folders_string_to_grep = ["D1 " ,"D3 " ,"D4 " ,"D5 " ,"D6 " ,"D7 " ,"D8 " ,"D9 " ,"D10 " ,"D11 " ,"D12 " ,"D13 " ,"D14 " ,"D15 " ,"D16 " ,"D17 " ,"D18 " ,"D19 " ,"D20 " ,"D21 " ,"D22 " ,"D23 " ,"D24 " ,"D25 " ,"D26 "]
+
+The run stopped after running 3 elements of the above list
+
+Therefore the file was made to run multiple times with 
+laser_profile_folders_string_to_grep = ["D1"]
+processed_csv_data.to_csv("processed_laser_profile_data_1.csv")
+saved filename : process_laser_profile_data_1.py
+run cmd : python process_laser_profile_data_1.py
+
+laser_profile_folders_string_to_grep = ["D3"]
+processed_csv_data.to_csv("processed_laser_profile_data_3.csv")
+saved filename : process_laser_profile_data_3.py
+run cmd : python process_laser_profile_data_3.py
+
+laser_profile_folders_string_to_grep = ["D4]
+processed_csv_data.to_csv("processed_laser_profile_data_4.csv")
+saved filename : process_laser_profile_data_4.py
+run cmd : python process_laser_profile_data_4.py
+
+.
+.
+.
+
+laser_profile_folders_string_to_grep = ["D26"]
+processed_csv_data.to_csv("processed_laser_profile_data_26.csv")
+saved filename : process_laser_profile_data_26.py
+run cmd : python process_laser_profile_data_26.py
+
+and all 25 output files were merged using laser_profile_merge.py
+(Note 25 files and not 26 because D2 data is missing in the original dataset)
