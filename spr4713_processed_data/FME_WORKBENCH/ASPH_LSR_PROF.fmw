@@ -1,0 +1,2295 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command line to run this workspace:
+#        "C:\Program Files\FME\fme.exe" C:\Users\kmani\OneDrive\Desktop\INDOT\Oracle_FME_files\FME_workbench\ASPH_LSR_PROF.fmw
+#          --SourceDataset_CSV2 "C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\asphalt_laser_profile_file_info.csv"
+#          --DestDataset_ORACLE_NONSPATIAL_5 "spr4713"
+#          --DestDataset_ORACLE_NONSPATIAL "spr4713"
+#          --DestDataset_ORACLE_NONSPATIAL_4 "spr4713"
+#          --SourceDataset_CSV2_4 "C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\processed_asphalt_laser_profile_data.csv"
+#          --FME_LAUNCH_VIEWER_APP "YES"
+#    
+#!   A0_PREVIEW_IMAGE="data:image/png;base64,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"
+#!   ARCGIS_COMPATIBILITY="ARCGIS_AUTO"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="NONE"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="3765.2 1179.7"
+#!   DOC_TOP_LEFT="-670.593 -1143.2"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="22789"
+#!   FME_BULK_MODE_THRESHOLD="2000"
+#!   FME_DOCUMENT_GUID="f916acd0-2790-461e-ae57-9da14ba7f165"
+#!   FME_DOCUMENT_PRIORGUID="2585c68c-268f-4616-bcb7-8d1175896e87,2e4c8dc0-cbc3-4dd3-9dca-19a6e09d386b,627bffda-037d-4231-80de-b7efbc1a2f60,a1c996b9-f9e1-4b80-af1e-204f55580425,6a2228c5-b162-42b2-98ea-3ad68f9cf758,27371f5e-0fab-4451-a602-a0fe67590134,d6423bb4-6f3f-4a79-b47d-1b244e1a43e9,d9974462-a408-4624-b7cc-bc7bfba1b7d6"
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_NAMES_ENCODING="UTF-8"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2022.2.3.0 (20230131 - Build 22789 - WIN64)"
+#!   LAST_SAVE_DATE="2023-08-19T22:49:15"
+#!   LOG_FILE=""
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="310"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-1091.83 254.632"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="81"
+#! >
+#! <DATASETS>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="CSV2"
+#!   DATASET="$(SourceDataset_CSV2)"
+#!   KEYWORD="CSV2_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE=""
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="csv_line_number uint64 csv_number_of_fields uint32 csv_skipped_line string csv_total_number_of_columns uint32 csv_type string fme_basename varchar(50) fme_color varchar(50) fme_dataset varchar(50) fme_feature_type varchar(50) fme_fill_color varchar(50) fme_geometry varchar(50) fme_primary_axis string fme_rotation string fme_secondary_axis string fme_start_angle string fme_sweep_angle string fme_text_size string fme_text_string varchar(50) fme_type varchar(50) multi_reader_full_id string multi_reader_id string multi_reader_keyword varchar(50) multi_reader_type varchar(50)"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE="LISTBOX_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="22789"
+#!   COORDSYS=""
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_ATTR_TYPE"
+#!   VALUE="string"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="File1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="CSV File"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the CSV file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the CSV file"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="CSV2"
+#!   DATASET="$(SourceDataset_CSV2_4)"
+#!   KEYWORD="CSV2_3"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE=""
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="csv_line_number uint64 csv_number_of_fields uint32 csv_skipped_line string csv_total_number_of_columns uint32 csv_type string fme_basename varchar(50) fme_color varchar(50) fme_dataset varchar(50) fme_feature_type varchar(50) fme_fill_color varchar(50) fme_geometry varchar(50) fme_primary_axis string fme_rotation string fme_secondary_axis string fme_start_angle string fme_sweep_angle string fme_text_size string fme_text_string varchar(50) fme_type varchar(50) multi_reader_full_id string multi_reader_id string multi_reader_keyword varchar(50) multi_reader_type varchar(50)"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE="LISTBOX_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="22789"
+#!   COORDSYS=""
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_ATTR_TYPE"
+#!   VALUE="string"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="File1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="CSV File"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the CSV file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the CSV file"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#!   DATASET="$(DestDataset_ORACLE_NONSPATIAL)"
+#!   KEYWORD="ORACLE_NONSPATIAL_1"
+#!   MULTI_GEOM_ALLOWED="true"
+#!   ATTR_MAX_LENGTH="128"
+#!   ATTR_CASE="UPPER_FIRST_ALPHA"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="oracle_create_table &quot;&quot; oracle_drop_table &quot;&quot; oracle_table_writer_mode &quot;&quot; oracle_update_key_columns &quot;&quot; oracle_truncate_table &quot;&quot; fme_feature_operation INSERT fme_table_handling CREATE_IF_MISSING fme_selection_method MATCH_COLUMNS fme_match_columns &quot;&quot; fme_where_builder_clause &quot;&quot; oracle_params &quot;&quot; oracle_sql_encoded &quot;&quot; oracle_sequenced_cols &quot;&quot;"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_basename char(50) fme_color char(50) fme_dataset char(50) fme_db_operation char(8) fme_feature_type char(50) fme_fill_color char(50) fme_geometry char(50) fme_primary_axis float fme_rotation float fme_secondary_axis float fme_start_angle float fme_sweep_angle float fme_text_size float fme_text_string char(50) fme_type char(50) oracle_type char(50)"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP fme_configuration_group fme_configuration_common_group%fme_spatial_group%fme_advanced_group%oracle_advanced_group Table&quot; &quot;&quot; &quot;GUI OPTIONAL NAMEDGROUP fme_configuration_common_group fme_feature_operation%fme_table_handling%mie_pack%oracle_model%fme_update_geometry%fme_selection_group%fme_table_creation_group General&quot; &quot;&quot; &quot;GUI ACTIVECHOICE_LOOKUP fme_feature_operation Insert,INSERT,fme_update_geometry,fme_selection_group,mie_pack%Update,UPDATE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN%Upsert,UPSERT,fme_where_builder_clause,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN%Delete,DELETE,++fme_table_handling+USE_EXISTING,fme_update_geometry,++fme_selection_group+FME_DISCLOSURE_OPEN,fme_spatial_group,fme_advanced_group,oracle_sequenced_cols%&lt;at&gt;Value&lt;openparen&gt;fme_db_operation&lt;closeparen&gt;,MULTIPLE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN Feature Operation&quot; INSERT &quot;GUI ACTIVECHOICE_LOOKUP fme_table_handling Use&lt;space&gt;Existing,USE_EXISTING,fme_table_creation_group%Create&lt;space&gt;If&lt;space&gt;Needed,CREATE_IF_MISSING%Drop&lt;space&gt;and&lt;space&gt;Create,DROP_CREATE%Truncate&lt;space&gt;Existing,TRUNCATE_EXISTING,fme_table_creation_group Table Handling&quot; CREATE_IF_MISSING &quot;GUI OPTIONAL DISCLOSUREGROUP fme_selection_group fme_selection_method Row Selection&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE RADIOPARAMETERGROUP fme_selection_method fme_match_columns,MATCH_COLUMNS%fme_where_builder_clause,BUILDER Row Selection Method&quot; MATCH_COLUMNS &quot;GUI WHOLE_LINE ATTRLIST_COMMAS fme_match_columns \&quot; \&quot; Match Columns&quot; &quot;&quot; &quot;GUI WHOLE_LINE TEXT_EDIT_SQL_CFG_OR_ATTR fme_where_builder_clause MODE,WHERE WHERE Clause&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP fme_table_creation_group oracle_params Table Creation&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT oracle_params Additional CREATE TABLE Clause(s)&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP oracle_advanced_group oracle_sequenced_cols%oracle_sql_encoded Advanced&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT oracle_sequenced_cols Sequenced Table Columns&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT_EDIT_SQL_CFG oracle_sql_encoded MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL Statement (Overrides Feature Operation)&quot; &quot;&quot; "
+#!   ATTR_INDEX_TYPES="BTree Bitmap PrimaryKey Unique"
+#!   ATTR_NAME_INVALID_CHARS=".%&lt;&gt;|: []()?*&apos;&amp;+-/{}\\&quot;"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="DATABASE"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="22789"
+#!   COORDSYS=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="ORACLE_NONSPATIAL_OUT_START_TRANSACTION ORACLE_NONSPATIAL_OUT_CHUNK_SIZE ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0} ORACLE_NONSPATIAL_OUT_END_SQL{0} ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE_ATTRS"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Table1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Table"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_AUTHENTICATION"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_PROXY"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="PARAMS_TO_NOT_PROPAGATE_ON_INSPECT"
+#!   VALUE="BEGIN_SQL{0} END_SQL{0}"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="SUPPORTS_SCHEMA_IN_FEATURE_TYPE_NAME"
+#!   VALUE="YES"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#!   DATASET="$(DestDataset_ORACLE_NONSPATIAL_5)"
+#!   KEYWORD="ORACLE_NONSPATIAL_2"
+#!   MULTI_GEOM_ALLOWED="true"
+#!   ATTR_MAX_LENGTH="128"
+#!   ATTR_CASE="UPPER_FIRST_ALPHA"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="oracle_create_table &quot;&quot; oracle_drop_table &quot;&quot; oracle_table_writer_mode &quot;&quot; oracle_update_key_columns &quot;&quot; oracle_truncate_table &quot;&quot; fme_feature_operation INSERT fme_table_handling CREATE_IF_MISSING fme_selection_method MATCH_COLUMNS fme_match_columns &quot;&quot; fme_where_builder_clause &quot;&quot; oracle_params &quot;&quot; oracle_sql_encoded &quot;&quot; oracle_sequenced_cols &quot;&quot;"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_basename char(50) fme_color char(50) fme_dataset char(50) fme_db_operation char(8) fme_feature_type char(50) fme_fill_color char(50) fme_geometry char(50) fme_primary_axis float fme_rotation float fme_secondary_axis float fme_start_angle float fme_sweep_angle float fme_text_size float fme_text_string char(50) fme_type char(50) oracle_type char(50)"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP fme_configuration_group fme_configuration_common_group%fme_spatial_group%fme_advanced_group%oracle_advanced_group Table&quot; &quot;&quot; &quot;GUI OPTIONAL NAMEDGROUP fme_configuration_common_group fme_feature_operation%fme_table_handling%mie_pack%oracle_model%fme_update_geometry%fme_selection_group%fme_table_creation_group General&quot; &quot;&quot; &quot;GUI ACTIVECHOICE_LOOKUP fme_feature_operation Insert,INSERT,fme_update_geometry,fme_selection_group,mie_pack%Update,UPDATE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN%Upsert,UPSERT,fme_where_builder_clause,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN%Delete,DELETE,++fme_table_handling+USE_EXISTING,fme_update_geometry,++fme_selection_group+FME_DISCLOSURE_OPEN,fme_spatial_group,fme_advanced_group,oracle_sequenced_cols%&lt;at&gt;Value&lt;openparen&gt;fme_db_operation&lt;closeparen&gt;,MULTIPLE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN Feature Operation&quot; INSERT &quot;GUI ACTIVECHOICE_LOOKUP fme_table_handling Use&lt;space&gt;Existing,USE_EXISTING,fme_table_creation_group%Create&lt;space&gt;If&lt;space&gt;Needed,CREATE_IF_MISSING%Drop&lt;space&gt;and&lt;space&gt;Create,DROP_CREATE%Truncate&lt;space&gt;Existing,TRUNCATE_EXISTING,fme_table_creation_group Table Handling&quot; CREATE_IF_MISSING &quot;GUI OPTIONAL DISCLOSUREGROUP fme_selection_group fme_selection_method Row Selection&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE RADIOPARAMETERGROUP fme_selection_method fme_match_columns,MATCH_COLUMNS%fme_where_builder_clause,BUILDER Row Selection Method&quot; MATCH_COLUMNS &quot;GUI WHOLE_LINE ATTRLIST_COMMAS fme_match_columns \&quot; \&quot; Match Columns&quot; &quot;&quot; &quot;GUI WHOLE_LINE TEXT_EDIT_SQL_CFG_OR_ATTR fme_where_builder_clause MODE,WHERE WHERE Clause&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP fme_table_creation_group oracle_params Table Creation&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT oracle_params Additional CREATE TABLE Clause(s)&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP oracle_advanced_group oracle_sequenced_cols%oracle_sql_encoded Advanced&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT oracle_sequenced_cols Sequenced Table Columns&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT_EDIT_SQL_CFG oracle_sql_encoded MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL Statement (Overrides Feature Operation)&quot; &quot;&quot; "
+#!   ATTR_INDEX_TYPES="BTree Bitmap PrimaryKey Unique"
+#!   ATTR_NAME_INVALID_CHARS=".%&lt;&gt;|: []()?*&apos;&amp;+-/{}\\&quot;"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="DATABASE"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="22789"
+#!   COORDSYS=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="ORACLE_NONSPATIAL_OUT_START_TRANSACTION ORACLE_NONSPATIAL_OUT_CHUNK_SIZE ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0} ORACLE_NONSPATIAL_OUT_END_SQL{0} ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE_ATTRS"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Table1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Table"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_AUTHENTICATION"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_PROXY"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="PARAMS_TO_NOT_PROPAGATE_ON_INSPECT"
+#!   VALUE="BEGIN_SQL{0} END_SQL{0}"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="SUPPORTS_SCHEMA_IN_FEATURE_TYPE_NAME"
+#!   VALUE="YES"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#!   DATASET="$(DestDataset_ORACLE_NONSPATIAL_4)"
+#!   KEYWORD="ORACLE_NONSPATIAL_3"
+#!   MULTI_GEOM_ALLOWED="true"
+#!   ATTR_MAX_LENGTH="128"
+#!   ATTR_CASE="UPPER_FIRST_ALPHA"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="oracle_create_table &quot;&quot; oracle_drop_table &quot;&quot; oracle_table_writer_mode &quot;&quot; oracle_update_key_columns &quot;&quot; oracle_truncate_table &quot;&quot; fme_feature_operation INSERT fme_table_handling CREATE_IF_MISSING fme_selection_method MATCH_COLUMNS fme_match_columns &quot;&quot; fme_where_builder_clause &quot;&quot; oracle_params &quot;&quot; oracle_sql_encoded &quot;&quot; oracle_sequenced_cols &quot;&quot;"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_basename char(50) fme_color char(50) fme_dataset char(50) fme_db_operation char(8) fme_feature_type char(50) fme_fill_color char(50) fme_geometry char(50) fme_primary_axis float fme_rotation float fme_secondary_axis float fme_start_angle float fme_sweep_angle float fme_text_size float fme_text_string char(50) fme_type char(50) oracle_type char(50)"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP fme_configuration_group fme_configuration_common_group%fme_spatial_group%fme_advanced_group%oracle_advanced_group Table&quot; &quot;&quot; &quot;GUI OPTIONAL NAMEDGROUP fme_configuration_common_group fme_feature_operation%fme_table_handling%mie_pack%oracle_model%fme_update_geometry%fme_selection_group%fme_table_creation_group General&quot; &quot;&quot; &quot;GUI ACTIVECHOICE_LOOKUP fme_feature_operation Insert,INSERT,fme_update_geometry,fme_selection_group,mie_pack%Update,UPDATE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN%Upsert,UPSERT,fme_where_builder_clause,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN%Delete,DELETE,++fme_table_handling+USE_EXISTING,fme_update_geometry,++fme_selection_group+FME_DISCLOSURE_OPEN,fme_spatial_group,fme_advanced_group,oracle_sequenced_cols%&lt;at&gt;Value&lt;openparen&gt;fme_db_operation&lt;closeparen&gt;,MULTIPLE,++fme_table_handling+USE_EXISTING,++fme_selection_group+FME_DISCLOSURE_OPEN Feature Operation&quot; INSERT &quot;GUI ACTIVECHOICE_LOOKUP fme_table_handling Use&lt;space&gt;Existing,USE_EXISTING,fme_table_creation_group%Create&lt;space&gt;If&lt;space&gt;Needed,CREATE_IF_MISSING%Drop&lt;space&gt;and&lt;space&gt;Create,DROP_CREATE%Truncate&lt;space&gt;Existing,TRUNCATE_EXISTING,fme_table_creation_group Table Handling&quot; CREATE_IF_MISSING &quot;GUI OPTIONAL DISCLOSUREGROUP fme_selection_group fme_selection_method Row Selection&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE RADIOPARAMETERGROUP fme_selection_method fme_match_columns,MATCH_COLUMNS%fme_where_builder_clause,BUILDER Row Selection Method&quot; MATCH_COLUMNS &quot;GUI WHOLE_LINE ATTRLIST_COMMAS fme_match_columns \&quot; \&quot; Match Columns&quot; &quot;&quot; &quot;GUI WHOLE_LINE TEXT_EDIT_SQL_CFG_OR_ATTR fme_where_builder_clause MODE,WHERE WHERE Clause&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP fme_table_creation_group oracle_params Table Creation&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT oracle_params Additional CREATE TABLE Clause(s)&quot; &quot;&quot; &quot;GUI OPTIONAL DISCLOSUREGROUP oracle_advanced_group oracle_sequenced_cols%oracle_sql_encoded Advanced&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT oracle_sequenced_cols Sequenced Table Columns&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT_EDIT_SQL_CFG oracle_sql_encoded MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL Statement (Overrides Feature Operation)&quot; &quot;&quot; "
+#!   ATTR_INDEX_TYPES="BTree Bitmap PrimaryKey Unique"
+#!   ATTR_NAME_INVALID_CHARS=".%&lt;&gt;|: []()?*&apos;&amp;+-/{}\\&quot;"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="DATABASE"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="22789"
+#!   COORDSYS=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="ORACLE_NONSPATIAL_OUT_START_TRANSACTION ORACLE_NONSPATIAL_OUT_CHUNK_SIZE ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0} ORACLE_NONSPATIAL_OUT_END_SQL{0} ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE_ATTRS"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Table1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Table"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_AUTHENTICATION"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="NETWORK_PROXY"
+#!   VALUE="NO"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="PARAMS_TO_NOT_PROPAGATE_ON_INSPECT"
+#!   VALUE="BEGIN_SQL{0} END_SQL{0}"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="SUPPORTS_SCHEMA_IN_FEATURE_TYPE_NAME"
+#!   VALUE="YES"
+#! />
+#! </DATASET>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="datetime"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="time"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="real64"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="x_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="y_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="z_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="real32"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int64"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int32"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int16"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int8"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint64"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint32"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint16"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint8"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="boolean"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="number(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar2(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="raw(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="raw(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="nchar(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="nvarchar(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="blob"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="clob"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="json"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="nclob"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xmltype"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="binary_double"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="binary_float"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="integer"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="integer"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestamp"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestamp(width)"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestamptz"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestamptz(width)"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestampltz"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestampltz(width)"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="timestamp"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(8)"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(10,0)"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(19,0)"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(20,0)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_feature_table"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_map"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_voxel_grid"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_circle"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_point"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_multipoint"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_line"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_multiline"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_area"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_multipoly"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_arc"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_rectangle"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_collection"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_solid"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_surface"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_multisolid"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_multisurface"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_voxel_grid"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="oracle_nil"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="ORACLE_NONSPATIAL"
+#! />
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="CSV"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="8"
+#!   FEAT_GEOMTYPE="csv_none"
+#!   POSITION="157.65569754463002 36.501723381796864"
+#!   BOUNDING_RECT="157.65569754463002 36.501723381796864 454 71"
+#!   ORDER="500000000000112"
+#!   COLLAPSED="false"
+#!   KEYWORD="CSV2_1"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   READ_SELECT_ATTRS="true"
+#!   MERGE_FILTER=""
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Filename" ATTR_TYPE="varchar(50)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Order of Scan" ATTR_TYPE="varchar(5)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Starting Timestamp" ATTR_TYPE="varchar(16)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Ending Timestamp" ATTR_TYPE="varchar(16)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laser beam offset(mm)" ATTR_TYPE="real32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laser beam offset locn" ATTR_TYPE="varchar(38)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laser beam vertical meas. Low limit(mm)" ATTR_TYPE="real32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laser beam vertical meas. High limit(mm)" ATTR_TYPE="real32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laser beam vertical meas. range(mm)" ATTR_TYPE="real32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Carriage Start Position(mm)" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Carriage End Position(mm)" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Axle Pos. E-&gt;W(mm)" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laser Start Position(mm)" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Notes" ATTR_TYPE="varchar(1)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="ASPH_LSR_PROF_FILE_INFO"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="true"
+#!   IDENTIFIER="4"
+#!   FEAT_GEOMTYPE="All"
+#!   POSITION="2284.366843668437 36.501723381796864"
+#!   BOUNDING_RECT="2284.366843668437 36.501723381796864 662.46981825772946 71"
+#!   ORDER="500000000000106"
+#!   COLLAPSED="false"
+#!   KEYWORD="ORACLE_NONSPATIAL_2"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="1"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="FILENAME" ATTR_TYPE="varchar2(100)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ORDER_OF_SCAN" ATTR_TYPE="varchar2(10)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="STARTING_TIMESTAMP" ATTR_TYPE="varchar2(20)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ENDING_TIMESTAMP" ATTR_TYPE="varchar2(20)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASER_BEAM_OFFSET_MM" ATTR_TYPE="float" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASER_BEAM_OFFSET_LOCN" ATTR_TYPE="varchar2(100)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASER_BEAM_VERTICAL_MEAS_LOW_LIMIT_MM" ATTR_TYPE="float" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASER_BEAM_VERTICAL_MEAS_HIGH_LIMIT_MM" ATTR_TYPE="float" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASER_BEAM_VERTICAL_MEAS_RANGE_MM" ATTR_TYPE="float" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CARRIAGE_START_POSITION_MM" ATTR_TYPE="number(6,0)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CARRIAGE_END_POSITION_MM" ATTR_TYPE="number(6,0)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="AXLE_POS_E_W_MM" ATTR_TYPE="number(6,0)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASER_START_POSITION_MM" ATTR_TYPE="number(6,0)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="NOTES" ATTR_TYPE="varchar2(100)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_configuration_common_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_configuration_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_feature_operation" PARM_VALUE="INSERT"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_match_columns" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_selection_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_selection_method" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_table_creation_group" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_table_handling" PARM_VALUE="CREATE_IF_MISSING"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_where_builder_clause" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_advanced_group" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_params" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_sequenced_cols" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_sql_encoded" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="ASPH_LSR_PROF_PROCESSED_DATA"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="true"
+#!   IDENTIFIER="12"
+#!   FEAT_GEOMTYPE="All"
+#!   POSITION="2284.366843668437 -1010.9982766182031"
+#!   BOUNDING_RECT="2284.366843668437 -1010.9982766182031 810.23544325772946 71"
+#!   ORDER="500000000000121"
+#!   COLLAPSED="false"
+#!   KEYWORD="ORACLE_NONSPATIAL_3"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="1"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="DAY" ATTR_TYPE="varchar2(10)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="PASS_INSTANCE" ATTR_TYPE="varchar2(10)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="SAMPLE_NUMBER" ATTR_TYPE="number" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="HORIZ_MM_SAMP_NO_1384_8088" ATTR_TYPE="float" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASER_READING" ATTR_TYPE="float" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LASERBEAM_LOCN_MM" ATTR_TYPE="number" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="SAMPLED_TIME" ATTR_TYPE="varchar2(20)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="FILENAME_ID" ATTR_TYPE="number" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_configuration_common_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_configuration_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_feature_operation" PARM_VALUE="INSERT"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_match_columns" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_selection_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="fme_selection_method" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_table_creation_group" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_table_handling" PARM_VALUE="CREATE_IF_MISSING"/>
+#!     <DEFLINE_PARM PARM_NAME="fme_where_builder_clause" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_advanced_group" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_params" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_sequenced_cols" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="oracle_sql_encoded" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="CSV"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="15"
+#!   FEAT_GEOMTYPE="csv_none"
+#!   POSITION="-670.59332568634306 -1072.1997300219914"
+#!   BOUNDING_RECT="-670.59332568634306 -1072.1997300219914 454 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="true"
+#!   KEYWORD="CSV2_3"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   READ_SELECT_ATTRS="true"
+#!   MERGE_FILTER=""
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Day" ATTR_TYPE="varchar(3)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Pass Instance" ATTR_TYPE="varchar(4)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Filename" ATTR_TYPE="varchar(49)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Sample Number" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Horiz(mm)=samp_no*(1384/8088)" ATTR_TYPE="real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laser reading(mm)" ATTR_TYPE="real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Laserbeam locn(mm)" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Sampled Time" ATTR_TYPE="varchar(20)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <READER_DATASETS>
+#! <DATASET
+#!   NAME="CSV2_1"
+#!   OVERRIDE="-CSV2_1_DATASET"
+#!   DATASET="CSV2_1/asphalt_laser_profile_file_info.csv"
+#! />
+#! <DATASET
+#!   NAME="CSV2_3"
+#!   OVERRIDE="-CSV2_3_DATASET"
+#!   DATASET="CSV2_3/processed_asphalt_laser_profile_data.csv"
+#! />
+#! </READER_DATASETS>
+#! <CONNECTIONS>
+#! <CONNECTION
+#!   NAME="spr4713"
+#!   TYPE="DATABASE"
+#!   FAMILY="Oracle"
+#!   USAGE="MIXED"
+#! />
+#! </CONNECTIONS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_CSV2 INCLUDE_WEB_BROWSER%CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|All_Files(*)|* Source CSV (Comma Separated Value) File(s):"
+#!   DEFAULT_VALUE="C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\asphalt_laser_profile_file_info.csv"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL_5 FMT:ORACLE_NONSPATIAL%FAMILY:Oracle Connection:"
+#!   DEFAULT_VALUE="spr4713"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL FMT:ORACLE_NONSPATIAL%FAMILY:Oracle Connection:"
+#!   DEFAULT_VALUE="spr4713"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL_4 FMT:ORACLE_NONSPATIAL%FAMILY:Oracle Connection:"
+#!   DEFAULT_VALUE="spr4713"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_CSV2_4 INCLUDE_WEB_BROWSER%CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|All_Files(*)|* Source CSV (Comma Separated Value) File(s):"
+#!   DEFAULT_VALUE="C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\processed_asphalt_laser_profile_data.csv"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <USER_PARAMETERS
+#!   FORM="eyJwYXJhbWV0ZXJzIjpbeyJhY2Nlc3NNb2RlIjoicmVhZCIsImRlZmF1bHRWYWx1ZSI6IkM6XFxVc2Vyc1xca21hbmlcXHB1cmR1ZS5lZHVcXE9zY2FyIE1vbmNhZGEgLSBEci4gU2hpbiBTaGFyZWQgRm9sZGVyXFxzcHI0NzEzX3Byb2Nlc3NlZF9kYXRhXFxhc3BoYWx0X2xhc2VyX3Byb2ZpbGVcXGFzcGhhbHRfbGFzZXJfcHJvZmlsZV9maWxlX2luZm8uY3N2IiwiZmlsdGVycyI6W3siZGVzY3JpcHRpb24iOiJDU1YvQ29tcHJlc3NlZCBDU1YvVEVYVCBGaWxlcyIsImZpbHRlciI6WyIqLmNzdiIsIiouZ3oiLCIqLnR4dCJdfSx7ImRlc2NyaXB0aW9uIjoiQ1NWIEZpbGVzIiwiZmlsdGVyIjpbIiouY3N2Il19LHsiZGVzY3JpcHRpb24iOiJDb21wcmVzc2VkIENTViBGaWxlcyIsImZpbHRlciI6WyIqLmd6Il19LHsiZGVzY3JpcHRpb24iOiJUZXh0IEZpbGVzIiwiZmlsdGVyIjpbIioudHh0Il19LHsiZGVzY3JpcHRpb24iOiJBcmNoaXZlIEZpbGVzIiwiZmlsdGVyIjpbIiouN3oiLCIqLjd6aXAiLCIqLnJhciIsIioucnZ6IiwiKi50YXIiLCIqLnRhci5iejIiLCIqLnRhci5neiIsIioudGd6IiwiKi56aXAiLCIqLnppcHgiXX0seyJkZXNjcmlwdGlvbiI6IkNvbXByZXNzZWQgRmlsZXMiLCJmaWx0ZXIiOlsiKi5iejIiLCIqLmd6Il19LHsiZGVzY3JpcHRpb24iOiJBbGwgRmlsZXMiLCJmaWx0ZXIiOlsiKiJdfV0sImluY2x1ZGVXZWJCcm93c2VyIjp0cnVlLCJpdGVtc1RvU2VsZWN0IjoiZmlsZXMiLCJuYW1lIjoiU291cmNlRGF0YXNldF9DU1YyIiwicHJvbXB0IjoiU291cmNlIENTViAoQ29tbWEgU2VwYXJhdGVkIFZhbHVlKSBGaWxlKHMpOiIsInJlcXVpcmVkIjp0cnVlLCJzZWxlY3RNdWx0aXBsZSI6dHJ1ZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6ImZpbGUiLCJ2YWxpZGF0ZUV4aXN0ZW5jZSI6ZmFsc2UsInZhbHVlVHlwZSI6InN0cmluZyJ9LHsiY2hvaWNlU2V0dGluZ3MiOnsiY2hvaWNlU2V0IjoiZGJDb25uZWN0aW9ucyIsImZhbWlseSI6Ik9yYWNsZSIsImZvcm1hdCI6Ik9SQUNMRV9OT05TUEFUSUFMIn0sImRlZmF1bHRWYWx1ZSI6InNwcjQ3MTMiLCJuYW1lIjoiRGVzdERhdGFzZXRfT1JBQ0xFX05PTlNQQVRJQUxfNSIsInByb21wdCI6IkNvbm5lY3Rpb246IiwicmVxdWlyZWQiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZ2xvYmFsUGFyYW1ldGVyIl0sInR5cGUiOiJkcm9wZG93biIsInZhbHVlVHlwZSI6InN0cmluZ0VuY29kZWQifSx7ImNob2ljZVNldHRpbmdzIjp7ImNob2ljZVNldCI6ImRiQ29ubmVjdGlvbnMiLCJmYW1pbHkiOiJPcmFjbGUiLCJmb3JtYXQiOiJPUkFDTEVfTk9OU1BBVElBTCJ9LCJkZWZhdWx0VmFsdWUiOiJzcHI0NzEzIiwibmFtZSI6IkRlc3REYXRhc2V0X09SQUNMRV9OT05TUEFUSUFMIiwicHJvbXB0IjoiQ29ubmVjdGlvbjoiLCJyZXF1aXJlZCI6dHJ1ZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6ImRyb3Bkb3duIiwidmFsdWVUeXBlIjoic3RyaW5nRW5jb2RlZCJ9LHsiY2hvaWNlU2V0dGluZ3MiOnsiY2hvaWNlU2V0IjoiZGJDb25uZWN0aW9ucyIsImZhbWlseSI6Ik9yYWNsZSIsImZvcm1hdCI6Ik9SQUNMRV9OT05TUEFUSUFMIn0sImRlZmF1bHRWYWx1ZSI6InNwcjQ3MTMiLCJuYW1lIjoiRGVzdERhdGFzZXRfT1JBQ0xFX05PTlNQQVRJQUxfNCIsInByb21wdCI6IkNvbm5lY3Rpb246IiwicmVxdWlyZWQiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZ2xvYmFsUGFyYW1ldGVyIl0sInR5cGUiOiJkcm9wZG93biIsInZhbHVlVHlwZSI6InN0cmluZ0VuY29kZWQifSx7ImFjY2Vzc01vZGUiOiJyZWFkIiwiZGVmYXVsdFZhbHVlIjoiQzpcXFVzZXJzXFxrbWFuaVxccHVyZHVlLmVkdVxcT3NjYXIgTW9uY2FkYSAtIERyLiBTaGluIFNoYXJlZCBGb2xkZXJcXHNwcjQ3MTNfcHJvY2Vzc2VkX2RhdGFcXGFzcGhhbHRfbGFzZXJfcHJvZmlsZVxccHJvY2Vzc2VkX2FzcGhhbHRfbGFzZXJfcHJvZmlsZV9kYXRhLmNzdiIsImZpbHRlcnMiOlt7ImRlc2NyaXB0aW9uIjoiQ1NWL0NvbXByZXNzZWQgQ1NWL1RFWFQgRmlsZXMiLCJmaWx0ZXIiOlsiKi5jc3YiLCIqLmd6IiwiKi50eHQiXX0seyJkZXNjcmlwdGlvbiI6IkNTViBGaWxlcyIsImZpbHRlciI6WyIqLmNzdiJdfSx7ImRlc2NyaXB0aW9uIjoiQ29tcHJlc3NlZCBDU1YgRmlsZXMiLCJmaWx0ZXIiOlsiKi5neiJdfSx7ImRlc2NyaXB0aW9uIjoiVGV4dCBGaWxlcyIsImZpbHRlciI6WyIqLnR4dCJdfSx7ImRlc2NyaXB0aW9uIjoiQXJjaGl2ZSBGaWxlcyIsImZpbHRlciI6WyIqLjd6IiwiKi43emlwIiwiKi5yYXIiLCIqLnJ2eiIsIioudGFyIiwiKi50YXIuYnoyIiwiKi50YXIuZ3oiLCIqLnRneiIsIiouemlwIiwiKi56aXB4Il19LHsiZGVzY3JpcHRpb24iOiJDb21wcmVzc2VkIEZpbGVzIiwiZmlsdGVyIjpbIiouYnoyIiwiKi5neiJdfSx7ImRlc2NyaXB0aW9uIjoiQWxsIEZpbGVzIiwiZmlsdGVyIjpbIioiXX1dLCJpbmNsdWRlV2ViQnJvd3NlciI6dHJ1ZSwiaXRlbXNUb1NlbGVjdCI6ImZpbGVzIiwibmFtZSI6IlNvdXJjZURhdGFzZXRfQ1NWMl80IiwicHJvbXB0IjoiU291cmNlIENTViAoQ29tbWEgU2VwYXJhdGVkIFZhbHVlKSBGaWxlKHMpOiIsInJlcXVpcmVkIjp0cnVlLCJzZWxlY3RNdWx0aXBsZSI6dHJ1ZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6ImZpbGUiLCJ2YWxpZGF0ZUV4aXN0ZW5jZSI6ZmFsc2UsInZhbHVlVHlwZSI6InN0cmluZyJ9XX0="
+#! >
+#! <PARAMETER_INFO>
+#!     <INFO NAME="SourceDataset_CSV2" 
+#!   DEFAULT_VALUE="C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\asphalt_laser_profile_file_info.csv"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_CSV2 INCLUDE_WEB_BROWSER%CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|All_Files(*)|* Source CSV (Comma Separated Value) File(s):"
+#! />
+#!     <INFO NAME="DestDataset_ORACLE_NONSPATIAL_5" 
+#!   DEFAULT_VALUE="spr4713"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL_5 FMT:ORACLE_NONSPATIAL%FAMILY:Oracle Connection:"
+#! />
+#!     <INFO NAME="DestDataset_ORACLE_NONSPATIAL" 
+#!   DEFAULT_VALUE="spr4713"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL FMT:ORACLE_NONSPATIAL%FAMILY:Oracle Connection:"
+#! />
+#!     <INFO NAME="DestDataset_ORACLE_NONSPATIAL_4" 
+#!   DEFAULT_VALUE="spr4713"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL_4 FMT:ORACLE_NONSPATIAL%FAMILY:Oracle Connection:"
+#! />
+#!     <INFO NAME="SourceDataset_CSV2_4" 
+#!   DEFAULT_VALUE="C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\processed_asphalt_laser_profile_data.csv"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_CSV2_4 INCLUDE_WEB_BROWSER%CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|All_Files(*)|* Source CSV (Comma Separated Value) File(s):"
+#! />
+#! </PARAMETER_INFO>
+#! </USER_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="AttributeManager"
+#!   VERSION="4"
+#!   POSITION="1462.5146251462513 36.501723381796864"
+#!   BOUNDING_RECT="1462.5146251462513 36.501723381796864 454 71"
+#!   ORDER="500000000000102"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="22789"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="Filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Order of Scan" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Starting Timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Ending Timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser beam offset(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser beam offset locn" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser beam vertical meas. Low limit(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser beam vertical meas. High limit(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser beam vertical meas. range(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Carriage Start Position(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Carriage End Position(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Axle Pos. E-&gt;W(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser Start Position(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="USER_EXPOSED_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeManager"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="DatabaseJoiner"
+#!   VERSION="6"
+#!   POSITION="235.96750262974888 -1072.1997300219914"
+#!   BOUNDING_RECT="235.96750262974888 -1072.1997300219914 454 71"
+#!   ORDER="500000000000052"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="22789"
+#! >
+#!     <OUTPUT_FEAT NAME="JOINED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="Day" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Pass Instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Sample Number" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Horiz(mm)=samp_no*(1384/8088)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser reading(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laserbeam locn(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Sampled Time" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UNJOINED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="Day" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Pass Instance" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Sample Number" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Horiz(mm)=samp_no*(1384/8088)" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Laser reading(mm)" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Laserbeam locn(mm)" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Sampled Time" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="Day" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Pass Instance" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Filename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Sample Number" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Horiz(mm)=samp_no*(1384/8088)" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Laser reading(mm)" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Laserbeam locn(mm)" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Sampled Time" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="ADDED_FIELDS" PARM_VALUE="ID"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Joined"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Original"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_SIZE" PARM_VALUE="5000"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="spr4713"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="ORACLE_NONSPATIAL"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="ORACLE_NONSPATIAL_USE_UNIFIED_DATE_ATTRS,&quot;OPTIONAL NO_EDIT TEXT&quot;,ORACLE_NONSPATIAL&lt;space&gt;,ORACLE_NONSPATIAL_SERVER_TYPE,&quot;OPTIONAL NO_EDIT TEXT&quot;,ORACLE_NONSPATIAL&lt;space&gt;,ORACLE_NONSPATIAL_REMOVE_SCHEMA_QUALIFIER,&quot;OPTIONAL CHECKBOX YES%NO&quot;,ORACLE_NONSPATIAL&lt;space&gt;Remove&lt;space&gt;Table&lt;space&gt;Qualifier,ORACLE_NONSPATIAL_SHOW_SYSTEM_TABLES,&quot;OPTIONAL CHECKBOX YES%NO&quot;,ORACLE_NONSPATIAL&lt;space&gt;Include&lt;space&gt;System&lt;space&gt;Tables,ORACLE_NONSPATIAL_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,ORACLE_NONSPATIAL&lt;space&gt;Connection:,ORACLE_NONSPATIAL_CREATE_FEATURE_TABLES_FROM_DATA,&quot;OPTIONAL NO_EDIT TEXT&quot;,ORACLE_NONSPATIAL&lt;space&gt;,ORACLE_NONSPATIAL_PERSISTENT_CONNECTION,&quot;OPTIONAL CHECKBOX YES%NO&quot;,ORACLE_NONSPATIAL&lt;space&gt;Persistent&lt;space&gt;Connection,ORACLE_NONSPATIAL_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;OPTIONAL NO_EDIT TEXT&quot;,ORACLE_NONSPATIAL&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JOINED_ATTRIBUTE_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JOINED_LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JOIN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="Filename&lt;space&gt;FILENAME"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_ATTR_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCH_MULTIPLE_DISPLAY" PARM_VALUE="Create a feature for each match"/>
+#!     <XFORM_PARM PARM_NAME="MATCH_RULE_DISPLAY" PARM_VALUE="Match All (1:M)"/>
+#!     <XFORM_PARM PARM_NAME="OPTIMIZE_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_CREATE_FEATURE_TABLES_FROM_DATA" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_NAMED_CONNECTION" PARM_VALUE="spr4713"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_PERSISTENT_CONNECTION" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_REMOVE_SCHEMA_QUALIFIER" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_SERVER_TYPE" PARM_VALUE="ORACLE8i"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_SHOW_SYSTEM_TABLES" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ORACLE_NONSPATIAL_USE_UNIFIED_DATE_ATTRS" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="PREFETCH_EXHAUSTIVE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="PREFETCH_QUERY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TABLE" PARM_VALUE="C##SPR4713.ASPH_LSR_PROF_FILE_INFO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRIM_KEY_FIELDS_DISPLAY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DatabaseJoiner"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeManager"
+#!   VERSION="4"
+#!   POSITION="1223.0060572210657 -1072.1997300219914"
+#!   BOUNDING_RECT="1223.0060572210657 -1072.1997300219914 454 71"
+#!   ORDER="500000000000122"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="22789"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="Day" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Pass Instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Sample Number" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Horiz(mm)=samp_no*(1384/8088)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laser reading(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Laserbeam locn(mm)" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Sampled Time" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FILENAME_ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="Day Day  NO_OP Pass&lt;space&gt;Instance Pass&lt;space&gt;Instance  NO_OP Filename Filename  REMOVE Sample&lt;space&gt;Number Sample&lt;space&gt;Number  NO_OP Horiz&lt;openparen&gt;mm&lt;closeparen&gt;=samp_no*&lt;openparen&gt;1384&lt;solidus&gt;8088&lt;closeparen&gt; Horiz&lt;openparen&gt;mm&lt;closeparen&gt;=samp_no*&lt;openparen&gt;1384&lt;solidus&gt;8088&lt;closeparen&gt;  NO_OP Laser&lt;space&gt;reading&lt;openparen&gt;mm&lt;closeparen&gt; Laser&lt;space&gt;reading&lt;openparen&gt;mm&lt;closeparen&gt;  NO_OP Laserbeam&lt;space&gt;locn&lt;openparen&gt;mm&lt;closeparen&gt; Laserbeam&lt;space&gt;locn&lt;openparen&gt;mm&lt;closeparen&gt;  NO_OP Sampled&lt;space&gt;Time Sampled&lt;space&gt;Time  NO_OP ID FILENAME_ID  RENAME_SET_VALUE _matched_records _matched_records  REMOVE"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="USER_EXPOSED_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeManager_2"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="3"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="5"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 JOINED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! <ATTR_LINK
+#!   IDENTIFIER="786437"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 3 OUTPUT"
+#!   TARGET_PORT_DESC="3"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="524293"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 7 OUTPUT"
+#!   TARGET_PORT_DESC="7"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="196613"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 9 OUTPUT"
+#!   TARGET_PORT_DESC="9"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="655365"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="262149"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 6 OUTPUT"
+#!   TARGET_PORT_DESC="6"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="393221"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 10 OUTPUT"
+#!   TARGET_PORT_DESC="10"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="720901"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 8 OUTPUT"
+#!   TARGET_PORT_DESC="8"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="327685"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 11 OUTPUT"
+#!   TARGET_PORT_DESC="11"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="589829"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 2 OUTPUT"
+#!   TARGET_PORT_DESC="2"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="917509"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 13 OUTPUT"
+#!   TARGET_PORT_DESC="13"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="65541"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 1 OUTPUT"
+#!   TARGET_PORT_DESC="1"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="131077"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 12 OUTPUT"
+#!   TARGET_PORT_DESC="12"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="458757"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 4 OUTPUT"
+#!   TARGET_PORT_DESC="4"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="851973"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="ao 0 5 OUTPUT"
+#!   TARGET_PORT_DESC="5"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="393230"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 5 OUTPUT"
+#!   TARGET_PORT_DESC="5"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="327694"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 3 OUTPUT"
+#!   TARGET_PORT_DESC="3"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="458766"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 1 OUTPUT"
+#!   TARGET_PORT_DESC="1"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="262158"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 6 OUTPUT"
+#!   TARGET_PORT_DESC="6"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="131086"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="196622"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 4 OUTPUT"
+#!   TARGET_PORT_DESC="4"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="65550"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 7 OUTPUT"
+#!   TARGET_PORT_DESC="7"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="524302"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="ao 0 2 OUTPUT"
+#!   TARGET_PORT_DESC="2"
+#! />
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 310
+ARCGIS_COMPATIBILITY ARCGIS_AUTO
+GUI IGNORE SourceDataset_CSV2_1,CSV2_IN_FIELDS_GROUP_CSV2_1,CSV2_IN_DELIMITER_CSV2_1,CSV2_IN_FIELD_NAMES_LINE_CSV2_1,CSV2_IN_DATA_START_LINE_CSV2_1,CSV2_IN_ADVANCED_GROUP_CSV2_1,CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_1,CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_1,CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_1,CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1,CSV2_IN_FIELD_NAMES_GROUP_CSV2_1,CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_1,CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_1,CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_1,CSV2_IN_FIELD_VALUES_GROUP_CSV2_1,CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_1,CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_1,CSV2_IN_ENCODING_GROUP_CSV2_1,CSV2_IN_ENCODING_CSV2_1,CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_1,CSV2_IN_SKIPPED_LINES_GROUP_CSV2_1,CSV2_IN_READ_SKIPPED_LINES_CSV2_1,CSV2_IN_NETWORK_AUTHENTICATION_CSV2_1,SourceDataset_CSV2_3,CSV2_IN_FIELDS_GROUP_CSV2_3,CSV2_IN_DELIMITER_CSV2_3,CSV2_IN_FIELD_NAMES_LINE_CSV2_3,CSV2_IN_DATA_START_LINE_CSV2_3,CSV2_IN_ADVANCED_GROUP_CSV2_3,CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_3,CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_3,CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_3,CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_3,CSV2_IN_FIELD_NAMES_GROUP_CSV2_3,CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_3,CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_3,CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_3,CSV2_IN_FIELD_VALUES_GROUP_CSV2_3,CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_3,CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_3,CSV2_IN_ENCODING_GROUP_CSV2_3,CSV2_IN_ENCODING_CSV2_3,CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_3,CSV2_IN_SKIPPED_LINES_GROUP_CSV2_3,CSV2_IN_READ_SKIPPED_LINES_CSV2_3,CSV2_IN_NETWORK_AUTHENTICATION_CSV2_3,DestDataset_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_1,ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_1,DestDataset_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_2,ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_2,DestDataset_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_3,ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_3
+# ============================================================================
+DEFAULT_MACRO SourceDataset_CSV2 C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\asphalt_laser_profile_file_info.csv
+
+DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_5 spr4713
+
+DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL spr4713
+
+DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_4 spr4713
+
+DEFAULT_MACRO SourceDataset_CSV2_4 C:\Users\kmani\purdue.edu\Oscar Moncada - Dr. Shin Shared Folder\spr4713_processed_data\asphalt_laser_profile\processed_asphalt_laser_profile_data.csv
+
+# ============================================================================
+INCLUDE [ if {{$(SourceDataset_CSV2$encode)} == {}} { puts_real {Parameter 'SourceDataset_CSV2' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_ORACLE_NONSPATIAL_5$encode)} == {}} { puts_real {Parameter 'DestDataset_ORACLE_NONSPATIAL_5' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_ORACLE_NONSPATIAL$encode)} == {}} { puts_real {Parameter 'DestDataset_ORACLE_NONSPATIAL' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_ORACLE_NONSPATIAL_4$encode)} == {}} { puts_real {Parameter 'DestDataset_ORACLE_NONSPATIAL_4' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(SourceDataset_CSV2_4$encode)} == {}} { puts_real {Parameter 'SourceDataset_CSV2_4' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+MULTI_READER_TYPE{0} CSV2
+MULTI_READER_KEYWORD{0} CSV2_1
+MULTI_READER_GEN_DIRECTIVES{0} FIELD_VALUES_GROUP,,ENCODING_GROUP,,DATA_START_LINE,2,FIELD_QUALIFIER_CHARACTER,<lt>quote<gt>,FIELD_NAMES_GROUP,,CHUNK_SIZE,100000,READ_EMPTY_VALUES_AS,Null,FIELD_NAMES_LINE,1,TRIM_FIELD_NAME_QUALIFIERS,Yes,SCAN_TYPES,Yes,DELIMITER,<lt>comma<gt>,USE_CUSTOM_SCHEMA,NO,SKIPPED_LINES_GROUP,,READ_SKIPPED_LINES,No,SUPPORTED_READER_ARCHIVE_EXTENSIONS,csv.gz<comma>txt.gz,ENCODING,UTF-8,FIELDS_GROUP,,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,SCAN_MAX_ROWS,10000,REPLACE_ATTR_NAME_INVALID_CHARS,No,DATE_INPUT_FORMAT,ISO,ADVANCED_GROUP,,CASE_SENSITIVE_FIELD_NAMES,Yes,TYPE_ATTRIBUTE_HANDLING,STANDARD_TYPES,SCHEMA,,FIELD_QUALIFIER_ESCAPE_CHARACTER,<lt>quote<gt>,_MERGE_SCHEMAS,YES,CSV2_EXPOSE_FORMAT_ATTRS,,TRIM_FEATURE_TYPE_NAME,Yes,SKIP_DUPLICATE_DELIMITERS,No,EXPOSE_ATTRS_GROUP,,TRIM_FIELD_NAME_WHITESPACE,Yes,PREVIEW_PLACEHOLDER,,FEATURE_TYPE_NAME,FORMAT_NAME,ENFORCE_STRICT_SCHEMA,No,STRING_TYPE_ATTRIBUTE_HANDLING,EXPLICIT_WIDTH,SCAN_ADDITIONAL_FIELDS,No,DATASET_GROUP,,SCHEMA_GENERATION_GROUP,,PRESERVE_SOURCE_ENCODING,No,FIELD_SEPARATION_GROUP,,TRIM_FIELD_VALUE_QUALIFIERS,Yes
+MULTI_READER_TYPE{1} CSV2
+MULTI_READER_KEYWORD{1} CSV2_3
+MULTI_READER_GEN_DIRECTIVES{1} SKIPPED_LINES_GROUP,,PRESERVE_SOURCE_ENCODING,No,DATE_INPUT_FORMAT,ISO,CASE_SENSITIVE_FIELD_NAMES,Yes,ENFORCE_STRICT_SCHEMA,No,EXPOSE_ATTRS_GROUP,,CSV2_EXPOSE_FORMAT_ATTRS,,ENCODING_GROUP,,USE_CUSTOM_SCHEMA,YES,SCAN_TYPES,Yes,DATASET_GROUP,,TRIM_FIELD_NAME_WHITESPACE,Yes,TYPE_ATTRIBUTE_HANDLING,STANDARD_TYPES,_MERGE_SCHEMAS,YES,DELIMITER,<lt>comma<gt>,FIELD_NAMES_LINE,1,STRING_TYPE_ATTRIBUTE_HANDLING,EXPLICIT_WIDTH,SUPPORTED_READER_ARCHIVE_EXTENSIONS,csv.gz<comma>txt.gz,ADVANCED_GROUP,,FIELD_QUALIFIER_ESCAPE_CHARACTER,<lt>quote<gt>,TRIM_FIELD_NAME_QUALIFIERS,Yes,READ_EMPTY_VALUES_AS,Null,SCAN_MAX_ROWS,10000,FIELD_NAMES_GROUP,,REPLACE_ATTR_NAME_INVALID_CHARS,No,FIELDS_GROUP,,TRIM_FIELD_VALUE_QUALIFIERS,Yes,SCAN_ADDITIONAL_FIELDS,No,FIELD_QUALIFIER_CHARACTER,<lt>quote<gt>,FIELD_VALUES_GROUP,,FIELD_SEPARATION_GROUP,,SCHEMA,Day<comma>varchar<lt>openparen<gt>3<lt>closeparen<gt><comma>YES<semicolon>Pass<lt>space<gt>Instance<comma>varchar<lt>openparen<gt>4<lt>closeparen<gt><comma>YES<semicolon>Filename<comma>varchar<lt>openparen<gt>49<lt>closeparen<gt><comma>YES<semicolon>Sample<lt>space<gt>Number<comma>uint32<comma>YES<semicolon>Horiz<lt>openparen<gt>mm<lt>closeparen<gt>=samp_no*<lt>openparen<gt>1384<lt>solidus<gt>8088<lt>closeparen<gt><comma>real64<comma>YES<semicolon>Laser<lt>space<gt>reading<lt>openparen<gt>mm<lt>closeparen<gt><comma>real64<comma>YES<semicolon>Laserbeam<lt>space<gt>locn<lt>openparen<gt>mm<lt>closeparen<gt><comma>uint32<comma>YES<semicolon>Sampled<lt>space<gt>Time<comma>varchar<lt>openparen<gt>20<lt>closeparen<gt><comma>YES,ENCODING,windows-1252,READ_SKIPPED_LINES,No,DATA_START_LINE,2,FEATURE_TYPE_NAME,FORMAT_NAME,PREVIEW_PLACEHOLDER,,CHUNK_SIZE,100000,SCHEMA_GENERATION_GROUP,,TRIM_FEATURE_TYPE_NAME,Yes,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,SKIP_DUPLICATE_DELIMITERS,No
+WRITER_TYPE MULTI_WRITER
+MULTI_WRITER_DATASET_ORDER BY_ID
+MULTI_WRITER_FIRST_WRITER_ID 0
+MULTI_WRITER_TYPE{0} ORACLE_NONSPATIAL
+MULTI_WRITER_KEYWORD{0} ORACLE_NONSPATIAL_1
+MULTI_WRITER_TYPE{1} ORACLE_NONSPATIAL
+MULTI_WRITER_KEYWORD{1} ORACLE_NONSPATIAL_2
+MULTI_WRITER_TYPE{2} ORACLE_NONSPATIAL
+MULTI_WRITER_KEYWORD{2} ORACLE_NONSPATIAL_3
+#! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "CSV2_1"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CSV2 CSV2_1
+# =====================================================================
+# The following GUI line prompts for a file to be used as the source CSV file.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be read.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_CSV2_1 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CSV2 CSV2_1
+DEFAULT_MACRO SourceDataset_CSV2_1 $(SourceDataset_CSV2)
+GUI MULTIFILE SourceDataset_CSV2_1 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|All_Files|* Source CSV (Comma Separated Value) File(s):
+DEFAULT_MACRO CSV2_IN_TRIM_FEATURE_TYPE_NAME_CSV2_1 Yes
+CSV2_1_TRIM_FEATURE_TYPE_NAME "$(CSV2_IN_TRIM_FEATURE_TYPE_NAME_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_REPLACE_ATTR_NAME_INVALID_CHARS_CSV2_1 No
+CSV2_1_REPLACE_ATTR_NAME_INVALID_CHARS "$(CSV2_IN_REPLACE_ATTR_NAME_INVALID_CHARS_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_SUPPORTED_READER_ARCHIVE_EXTENSIONS_CSV2_1 csv.gz,txt.gz
+CSV2_1_SUPPORTED_READER_ARCHIVE_EXTENSIONS "$(CSV2_IN_SUPPORTED_READER_ARCHIVE_EXTENSIONS_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_FEATURE_TYPE_NAME_CSV2_1 FORMAT_NAME
+CSV2_1_FEATURE_TYPE_NAME "$(CSV2_IN_FEATURE_TYPE_NAME_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_FIELDS_GROUP_CSV2_1 FME_DISCLOSURE_OPEN
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELDS_GROUP_CSV2_1 CSV2_IN_DELIMITER_CSV2_1%CSV2_IN_FIELD_NAMES_LINE_CSV2_1%CSV2_IN_DATA_START_LINE_CSV2_1 Fields
+DEFAULT_MACRO CSV2_IN_DELIMITER_CSV2_1 <comma>
+CSV2_1_DELIMITER "$(CSV2_IN_DELIMITER_CSV2_1)"
+GUI STRING_OR_CHOICE_ENCODED CSV2_IN_DELIMITER_CSV2_1 auto%,%;%|%space%tab Delimiter Character:
+DEFAULT_MACRO CSV2_IN_FIELD_NAMES_LINE_CSV2_1 1
+CSV2_1_FIELD_NAMES_LINE "$(CSV2_IN_FIELD_NAMES_LINE_CSV2_1)"
+GUI OPTIONAL INT_OR_CHOICE CSV2_IN_FIELD_NAMES_LINE_CSV2_1 None%1%2%3%4%5 Field Names Line:
+GUI LOOKUP CSV2_IN_FIELD_NAMES_LINE_CSV2_1 None, 
+DEFAULT_MACRO CSV2_IN_DATA_START_LINE_CSV2_1 2
+CSV2_1_DATA_START_LINE "$(CSV2_IN_DATA_START_LINE_CSV2_1)"
+GUI RANGE_SLIDER CSV2_IN_DATA_START_LINE_CSV2_1 1%MAX%0 Data Start Line:
+DEFAULT_MACRO CSV2_IN_ADVANCED_GROUP_CSV2_1 FME_DISCLOSURE_OPEN
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_ADVANCED_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_1%CSV2_IN_FIELD_NAMES_GROUP_CSV2_1%CSV2_IN_FIELD_VALUES_GROUP_CSV2_1%CSV2_IN_ENCODING_GROUP_CSV2_1%CSV2_IN_SKIPPED_LINES_GROUP_CSV2_1%CSV2_IN_SCHEMA_GENERATION_GROUP Advanced
+DEFAULT_MACRO CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_1 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_1%CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_1%CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1 Field Separation
+DEFAULT_MACRO CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_1 No
+CSV2_1_SKIP_DUPLICATE_DELIMITERS "$(CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_1)"
+GUI CHOICE CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_1 Yes%No Skip Duplicate Delimiters:
+DEFAULT_MACRO CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_1 <quote>
+CSV2_1_FIELD_QUALIFIER_CHARACTER "$(CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_1)"
+GUI OPTIONAL STRING_ENCODED CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_1 Field Qualifier Character:
+DEFAULT_MACRO CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1 <quote>
+CSV2_1_FIELD_QUALIFIER_ESCAPE_CHARACTER "$(CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1)"
+GUI OPTIONAL STRING_ENCODED CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1 Field Qualifier Escape Character:
+DEFAULT_MACRO CSV2_IN_FIELD_NAMES_GROUP_CSV2_1 FME_DISCLOSURE_OPEN
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_NAMES_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_1%CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_1%CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_1 Field Names
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_NAME_QUALIFIERS_CSV2_1 Yes
+CSV2_1_TRIM_FIELD_NAME_QUALIFIERS "$(CSV2_IN_TRIM_FIELD_NAME_QUALIFIERS_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_1 Yes
+CSV2_1_CASE_SENSITIVE_FIELD_NAMES "$(CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_1)"
+GUI CHOICE CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_1 Yes%No Case Sensitive Field Names:
+DEFAULT_MACRO CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_1 No
+CSV2_1_ENFORCE_STRICT_SCHEMA "$(CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_1)"
+GUI CHOICE CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_1 Yes%No Enforce Strict Schema:
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_1 No
+CSV2_1_TRIM_FIELD_NAME_WHITESPACE "$(CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_1)"
+GUI CHOICE CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_1 Yes%No Trim Whitespaces From Field Names:
+DEFAULT_MACRO CSV2_IN_FIELD_VALUES_GROUP_CSV2_1 FME_DISCLOSURE_OPEN
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_VALUES_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_1%CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_1 Field Values
+DEFAULT_MACRO CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_1 Null
+CSV2_1_READ_EMPTY_VALUES_AS "$(CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_1)"
+GUI CHOICE CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_1 Missing%Null Read Empty Values As:
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_1 Yes
+CSV2_1_TRIM_FIELD_VALUE_QUALIFIERS "$(CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_1)"
+GUI CHOICE CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_1 Yes%No Trim Field Qualifier Characters:
+DEFAULT_MACRO CSV2_IN_ENCODING_GROUP_CSV2_1 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_ENCODING_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_IN_ENCODING_CSV2_1%CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_1 Encoding
+DEFAULT_MACRO CSV2_IN_ENCODING_CSV2_1 windows-1252
+CSV2_1_ENCODING "$(CSV2_IN_ENCODING_CSV2_1)"
+GUI STRING_OR_ENCODING CSV2_IN_ENCODING_CSV2_1 fme-system%* Character Encoding:
+DEFAULT_MACRO CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_1 No
+CSV2_1_PRESERVE_SOURCE_ENCODING "$(CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_1)"
+GUI CHOICE CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_1 Yes%No Preserve Source Encoding:
+DEFAULT_MACRO CSV2_IN_SKIPPED_LINES_GROUP_CSV2_1 FME_DISCLOSURE_OPEN
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_SKIPPED_LINES_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_IN_READ_SKIPPED_LINES_CSV2_1 Skipped Lines
+DEFAULT_MACRO CSV2_IN_READ_SKIPPED_LINES_CSV2_1 No
+CSV2_1_READ_SKIPPED_LINES "$(CSV2_IN_READ_SKIPPED_LINES_CSV2_1)"
+GUI CHOICE CSV2_IN_READ_SKIPPED_LINES_CSV2_1 Yes%No Read Skipped Lines:
+DEFAULT_MACRO CSV2_IN_SCAN_MAX_ROWS_CSV2_1 10000
+CSV2_1_SCAN_MAX_ROWS "$(CSV2_IN_SCAN_MAX_ROWS_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_SCAN_TYPES_CSV2_1 Yes
+CSV2_1_SCAN_TYPES "$(CSV2_IN_SCAN_TYPES_CSV2_1)"
+# ============================================================================
+# Determines whether numeric attributes should be interpreted as bounded or unbounded
+DEFAULT_MACRO CSV2_IN_TYPE_ATTRIBUTE_HANDLING_CSV2_1 STANDARD_TYPES
+CSV2_1_TYPE_ATTRIBUTE_HANDLING "$(CSV2_IN_TYPE_ATTRIBUTE_HANDLING_CSV2_1)"
+# ============================================================================
+# Determines whether string attributes should be interpreted as bounded or unbounded
+DEFAULT_MACRO CSV2_IN_STRING_TYPE_ATTRIBUTE_HANDLING_CSV2_1 EXPLICIT_WIDTH
+CSV2_1_STRING_TYPE_ATTRIBUTE_HANDLING "$(CSV2_IN_STRING_TYPE_ATTRIBUTE_HANDLING_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_DATE_INPUT_FORMAT_CSV2_1 ISO
+CSV2_1_DATE_INPUT_FORMAT "$(CSV2_IN_DATE_INPUT_FORMAT_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_SCAN_ADDITIONAL_FIELDS_CSV2_1 No
+CSV2_1_SCAN_ADDITIONAL_FIELDS "$(CSV2_IN_SCAN_ADDITIONAL_FIELDS_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_EXPOSE_ATTRS_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED
+CSV2_1_EXPOSE_ATTRS_GROUP "$(CSV2_IN_EXPOSE_ATTRS_GROUP_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_CSV2_1 Yes
+CSV2_1_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS "$(CSV2_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_CSV2_1)"
+DEFAULT_MACRO CSV2_IN_CHUNK_SIZE_CSV2_1 100000
+CSV2_1_CHUNK_SIZE "$(CSV2_IN_CHUNK_SIZE_CSV2_1)"
+# ===========================================================================
+DEFAULT_MACRO CSV2_IN_NETWORK_AUTHENTICATION_CSV2_1 
+CSV2_1_NETWORK_AUTHENTICATION "$(CSV2_IN_NETWORK_AUTHENTICATION_CSV2_1)"
+GUI OPTIONAL AUTHENTICATOR CSV2_IN_NETWORK_AUTHENTICATION_CSV2_1 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================
+DEFAULT_MACRO CSV2_IN_ATTRIBUTE_READING_CSV2_1 DEFLINE
+CSV2_1_ATTRIBUTE_READING "$(CSV2_IN_ATTRIBUTE_READING_CSV2_1)"
+# ============================================================================
+CSV2_1_GENERATE_FME_BUILD_NUM 22789
+CSV2_1_DATASET "$(SourceDataset_CSV2_1)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "CSV2_3"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CSV2 CSV2_3
+# =====================================================================
+# The following GUI line prompts for a file to be used as the source CSV file.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be read.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_CSV2_3 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CSV2 CSV2_3
+DEFAULT_MACRO SourceDataset_CSV2_3 $(SourceDataset_CSV2_4)
+GUI MULTIFILE SourceDataset_CSV2_3 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|All_Files|* Source CSV (Comma Separated Value) File(s):
+DEFAULT_MACRO CSV2_IN_TRIM_FEATURE_TYPE_NAME_CSV2_3 Yes
+CSV2_3_TRIM_FEATURE_TYPE_NAME "$(CSV2_IN_TRIM_FEATURE_TYPE_NAME_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_REPLACE_ATTR_NAME_INVALID_CHARS_CSV2_3 No
+CSV2_3_REPLACE_ATTR_NAME_INVALID_CHARS "$(CSV2_IN_REPLACE_ATTR_NAME_INVALID_CHARS_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_SUPPORTED_READER_ARCHIVE_EXTENSIONS_CSV2_3 csv.gz,txt.gz
+CSV2_3_SUPPORTED_READER_ARCHIVE_EXTENSIONS "$(CSV2_IN_SUPPORTED_READER_ARCHIVE_EXTENSIONS_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_FEATURE_TYPE_NAME_CSV2_3 FORMAT_NAME
+CSV2_3_FEATURE_TYPE_NAME "$(CSV2_IN_FEATURE_TYPE_NAME_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_FIELDS_GROUP_CSV2_3 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELDS_GROUP_CSV2_3 CSV2_IN_DELIMITER_CSV2_3%CSV2_IN_FIELD_NAMES_LINE_CSV2_3%CSV2_IN_DATA_START_LINE_CSV2_3 Fields
+DEFAULT_MACRO CSV2_IN_DELIMITER_CSV2_3 <comma>
+CSV2_3_DELIMITER "$(CSV2_IN_DELIMITER_CSV2_3)"
+GUI STRING_OR_CHOICE_ENCODED CSV2_IN_DELIMITER_CSV2_3 auto%,%;%|%space%tab Delimiter Character:
+DEFAULT_MACRO CSV2_IN_FIELD_NAMES_LINE_CSV2_3 1
+CSV2_3_FIELD_NAMES_LINE "$(CSV2_IN_FIELD_NAMES_LINE_CSV2_3)"
+GUI OPTIONAL INT_OR_CHOICE CSV2_IN_FIELD_NAMES_LINE_CSV2_3 None%1%2%3%4%5 Field Names Line:
+GUI LOOKUP CSV2_IN_FIELD_NAMES_LINE_CSV2_3 None, 
+DEFAULT_MACRO CSV2_IN_DATA_START_LINE_CSV2_3 2
+CSV2_3_DATA_START_LINE "$(CSV2_IN_DATA_START_LINE_CSV2_3)"
+GUI RANGE_SLIDER CSV2_IN_DATA_START_LINE_CSV2_3 1%MAX%0 Data Start Line:
+DEFAULT_MACRO CSV2_IN_ADVANCED_GROUP_CSV2_3 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_ADVANCED_GROUP_CSV2_3 FME_DISCLOSURE_CLOSED%CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_3%CSV2_IN_FIELD_NAMES_GROUP_CSV2_3%CSV2_IN_FIELD_VALUES_GROUP_CSV2_3%CSV2_IN_ENCODING_GROUP_CSV2_3%CSV2_IN_SKIPPED_LINES_GROUP_CSV2_3%CSV2_IN_SCHEMA_GENERATION_GROUP Advanced
+DEFAULT_MACRO CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_3 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_3 FME_DISCLOSURE_CLOSED%CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_3%CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_3%CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_3 Field Separation
+DEFAULT_MACRO CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_3 No
+CSV2_3_SKIP_DUPLICATE_DELIMITERS "$(CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_3)"
+GUI CHOICE CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_3 Yes%No Skip Duplicate Delimiters:
+DEFAULT_MACRO CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_3 <quote>
+CSV2_3_FIELD_QUALIFIER_CHARACTER "$(CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_3)"
+GUI OPTIONAL STRING_ENCODED CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_3 Field Qualifier Character:
+DEFAULT_MACRO CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_3 <quote>
+CSV2_3_FIELD_QUALIFIER_ESCAPE_CHARACTER "$(CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_3)"
+GUI OPTIONAL STRING_ENCODED CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_3 Field Qualifier Escape Character:
+DEFAULT_MACRO CSV2_IN_FIELD_NAMES_GROUP_CSV2_3 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_NAMES_GROUP_CSV2_3 FME_DISCLOSURE_CLOSED%CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_3%CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_3%CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_3 Field Names
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_NAME_QUALIFIERS_CSV2_3 Yes
+CSV2_3_TRIM_FIELD_NAME_QUALIFIERS "$(CSV2_IN_TRIM_FIELD_NAME_QUALIFIERS_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_3 Yes
+CSV2_3_CASE_SENSITIVE_FIELD_NAMES "$(CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_3)"
+GUI CHOICE CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_3 Yes%No Case Sensitive Field Names:
+DEFAULT_MACRO CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_3 No
+CSV2_3_ENFORCE_STRICT_SCHEMA "$(CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_3)"
+GUI CHOICE CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_3 Yes%No Enforce Strict Schema:
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_3 Yes
+CSV2_3_TRIM_FIELD_NAME_WHITESPACE "$(CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_3)"
+GUI CHOICE CSV2_IN_TRIM_FIELD_NAME_WHITESPACE_CSV2_3 Yes%No Trim Whitespaces From Field Names:
+DEFAULT_MACRO CSV2_IN_FIELD_VALUES_GROUP_CSV2_3 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_VALUES_GROUP_CSV2_3 FME_DISCLOSURE_CLOSED%CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_3%CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_3 Field Values
+DEFAULT_MACRO CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_3 Null
+CSV2_3_READ_EMPTY_VALUES_AS "$(CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_3)"
+GUI CHOICE CSV2_IN_READ_EMPTY_VALUES_AS_CSV2_3 Missing%Null Read Empty Values As:
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_3 Yes
+CSV2_3_TRIM_FIELD_VALUE_QUALIFIERS "$(CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_3)"
+GUI CHOICE CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_3 Yes%No Trim Field Qualifier Characters:
+DEFAULT_MACRO CSV2_IN_ENCODING_GROUP_CSV2_3 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_ENCODING_GROUP_CSV2_3 FME_DISCLOSURE_CLOSED%CSV2_IN_ENCODING_CSV2_3%CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_3 Encoding
+DEFAULT_MACRO CSV2_IN_ENCODING_CSV2_3 windows-1252
+CSV2_3_ENCODING "$(CSV2_IN_ENCODING_CSV2_3)"
+GUI STRING_OR_ENCODING CSV2_IN_ENCODING_CSV2_3 fme-system%* Character Encoding:
+DEFAULT_MACRO CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_3 No
+CSV2_3_PRESERVE_SOURCE_ENCODING "$(CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_3)"
+GUI CHOICE CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_3 Yes%No Preserve Source Encoding:
+DEFAULT_MACRO CSV2_IN_SKIPPED_LINES_GROUP_CSV2_3 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_SKIPPED_LINES_GROUP_CSV2_3 FME_DISCLOSURE_CLOSED%CSV2_IN_READ_SKIPPED_LINES_CSV2_3 Skipped Lines
+DEFAULT_MACRO CSV2_IN_READ_SKIPPED_LINES_CSV2_3 No
+CSV2_3_READ_SKIPPED_LINES "$(CSV2_IN_READ_SKIPPED_LINES_CSV2_3)"
+GUI CHOICE CSV2_IN_READ_SKIPPED_LINES_CSV2_3 Yes%No Read Skipped Lines:
+DEFAULT_MACRO CSV2_IN_SCAN_MAX_ROWS_CSV2_3 10000
+CSV2_3_SCAN_MAX_ROWS "$(CSV2_IN_SCAN_MAX_ROWS_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_SCAN_TYPES_CSV2_3 Yes
+CSV2_3_SCAN_TYPES "$(CSV2_IN_SCAN_TYPES_CSV2_3)"
+# ============================================================================
+# Determines whether numeric attributes should be interpreted as bounded or unbounded
+DEFAULT_MACRO CSV2_IN_TYPE_ATTRIBUTE_HANDLING_CSV2_3 STANDARD_TYPES
+CSV2_3_TYPE_ATTRIBUTE_HANDLING "$(CSV2_IN_TYPE_ATTRIBUTE_HANDLING_CSV2_3)"
+# ============================================================================
+# Determines whether string attributes should be interpreted as bounded or unbounded
+DEFAULT_MACRO CSV2_IN_STRING_TYPE_ATTRIBUTE_HANDLING_CSV2_3 EXPLICIT_WIDTH
+CSV2_3_STRING_TYPE_ATTRIBUTE_HANDLING "$(CSV2_IN_STRING_TYPE_ATTRIBUTE_HANDLING_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_DATE_INPUT_FORMAT_CSV2_3 ISO
+CSV2_3_DATE_INPUT_FORMAT "$(CSV2_IN_DATE_INPUT_FORMAT_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_SCAN_ADDITIONAL_FIELDS_CSV2_3 No
+CSV2_3_SCAN_ADDITIONAL_FIELDS "$(CSV2_IN_SCAN_ADDITIONAL_FIELDS_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_EXPOSE_ATTRS_GROUP_CSV2_3 
+CSV2_3_EXPOSE_ATTRS_GROUP "$(CSV2_IN_EXPOSE_ATTRS_GROUP_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_CSV2_3 Yes
+CSV2_3_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS "$(CSV2_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_CSV2_3)"
+DEFAULT_MACRO CSV2_IN_CHUNK_SIZE_CSV2_3 100000
+CSV2_3_CHUNK_SIZE "$(CSV2_IN_CHUNK_SIZE_CSV2_3)"
+# ===========================================================================
+DEFAULT_MACRO CSV2_IN_NETWORK_AUTHENTICATION_CSV2_3 
+CSV2_3_NETWORK_AUTHENTICATION "$(CSV2_IN_NETWORK_AUTHENTICATION_CSV2_3)"
+GUI OPTIONAL AUTHENTICATOR CSV2_IN_NETWORK_AUTHENTICATION_CSV2_3 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================
+DEFAULT_MACRO CSV2_IN_ATTRIBUTE_READING_CSV2_3 DEFLINE
+CSV2_3_ATTRIBUTE_READING "$(CSV2_IN_ATTRIBUTE_READING_CSV2_3)"
+# ============================================================================
+CSV2_3_GENERATE_FME_BUILD_NUM 22789
+CSV2_3_DATASET "$(SourceDataset_CSV2_3)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "ORACLE_NONSPATIAL_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER ORACLE_NONSPATIAL ORACLE_NONSPATIAL_1
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER ORACLE_NONSPATIAL ORACLE_NONSPATIAL_1
+DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_1 $(DestDataset_ORACLE_NONSPATIAL)
+GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL_1 FMT:ORACLE_NONSPATIAL Connection:
+ORACLE_NONSPATIAL_1_SERVER_TYPE ORACLE8i
+# New non-spatial Oracle Writers support case sensitive table names.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_UPPER_CASE_WRITER_TABLE_NAMES_ORACLE_NONSPATIAL_1 NO
+ORACLE_NONSPATIAL_1_UPPER_CASE_WRITER_TABLE_NAMES "$(ORACLE_NONSPATIAL_OUT_UPPER_CASE_WRITER_TABLE_NAMES_ORACLE_NONSPATIAL_1)"
+# ==============================================================================
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_1 
+GUI OPTIONAL DISCLOSUREGROUP ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_1 ORACLE_NONSPATIAL_OUT_NAMED_CONNECTION%ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_1%ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_1 Database Connection
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_1 
+ORACLE_NONSPATIAL_1_WORKSPACE "$(ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_1)"
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_1 YES
+ORACLE_NONSPATIAL_1_PERSISTENT_CONNECTION "$(ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_1)"
+GUI OPTIONAL CHECKBOX ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_1 YES%NO Persistent Connection:
+# ==============================================================================
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_1 
+GUI OPTIONAL DISCLOSUREGROUP ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_1 ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_1%ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_1%ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_1%ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_1%ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_1%ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_1 Advanced
+# ============================================================================
+# The following option specifies which feature number the writer should actually
+# start writing features to the database on. This should normally be zero, but
+# can be changed if a previous translation is interrupted.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_1 0
+ORACLE_NONSPATIAL_1_START_TRANSACTION "$(ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_1)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_1 Transaction to Start Writing at:
+# ============================================================================
+# The following specifies how many features will be written to the database in
+# on each bulk write.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_1 200
+ORACLE_NONSPATIAL_1_CHUNK_SIZE "$(ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_1)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_1 Bulk Write Size:
+# ============================================================================
+# The following specifies how many features will be written to the database in
+# each transaction.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_1 1000
+ORACLE_NONSPATIAL_1_TRANSACTION_INTERVAL "$(ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_1)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_1 Features Per Transaction
+# ============================================================================
+# The following specifies an SQL command to execute before opening the first
+# ORACLE table.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_1 
+ORACLE_NONSPATIAL_1_BEGIN_SQL{0} "$(ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_1)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_1 MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL To Run Before Write
+# ============================================================================
+# The following specifies an SQL command to execute after closing all the
+# ORACLE tables.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_1 
+ORACLE_NONSPATIAL_1_END_SQL{0} "$(ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_1)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_1 MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL To Run After Write
+# ==============================================================================
+# The following specifies whether rows written to the writer's tables have
+# to adhere strictly to the destination feature type. When 'No' or 'Warn',
+# character columns are truncated to fit and other conversion problems end up
+# inserting NULL values; if STRICT_ATTR_CONVERSION is 'Yes', rows containing
+# such problems will be logged and not written to the tables.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_1 No
+ORACLE_NONSPATIAL_1_STRICT_ATTR_CONVERSION "$(ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_1)"
+GUI OPTIONAL CHOICE ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_1 Yes%No%Warn Enforce Strict Attribute Conversion:
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_COORDINATE_SYSTEM_GRANULARITY_ORACLE_NONSPATIAL_1 FEATURE
+ORACLE_NONSPATIAL_1_COORDINATE_SYSTEM_GRANULARITY "$(ORACLE_NONSPATIAL_OUT_COORDINATE_SYSTEM_GRANULARITY_ORACLE_NONSPATIAL_1)"
+# ============================================================================
+ORACLE_NONSPATIAL_1_GENERATE_FME_BUILD_NUM 22789
+# ==============================================================================
+# The following specifies the name of the Oracle Workspace that we should go
+# to when writing tables. Redefining just the GUI line as we can't bring up the
+# Oracle workspace picker in non-Settings box contexts.
+GUI OPTIONAL TEXT ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_1 Oracle Workspace:
+ORACLE_NONSPATIAL_1_DATASET "$(DestDataset_ORACLE_NONSPATIAL_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "ORACLE_NONSPATIAL_2"
+#! END_WB_HEADER
+#! START_DEST_HEADER ORACLE_NONSPATIAL ORACLE_NONSPATIAL_2
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_2 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER ORACLE_NONSPATIAL ORACLE_NONSPATIAL_2
+DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_2 $(DestDataset_ORACLE_NONSPATIAL_5)
+GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL_2 FMT:ORACLE_NONSPATIAL Connection:
+ORACLE_NONSPATIAL_2_SERVER_TYPE ORACLE8i
+# New non-spatial Oracle Writers support case sensitive table names.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_UPPER_CASE_WRITER_TABLE_NAMES_ORACLE_NONSPATIAL_2 NO
+ORACLE_NONSPATIAL_2_UPPER_CASE_WRITER_TABLE_NAMES "$(ORACLE_NONSPATIAL_OUT_UPPER_CASE_WRITER_TABLE_NAMES_ORACLE_NONSPATIAL_2)"
+# ==============================================================================
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_2 
+GUI OPTIONAL DISCLOSUREGROUP ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_2 ORACLE_NONSPATIAL_OUT_NAMED_CONNECTION%ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_2%ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_2 Database Connection
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_2 
+ORACLE_NONSPATIAL_2_WORKSPACE "$(ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_2)"
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_2 YES
+ORACLE_NONSPATIAL_2_PERSISTENT_CONNECTION "$(ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_2)"
+GUI OPTIONAL CHECKBOX ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_2 YES%NO Persistent Connection:
+# ==============================================================================
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_2 
+GUI OPTIONAL DISCLOSUREGROUP ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_2 ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_2%ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_2%ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_2%ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_2%ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_2%ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_2 Advanced
+# ============================================================================
+# The following option specifies which feature number the writer should actually
+# start writing features to the database on. This should normally be zero, but
+# can be changed if a previous translation is interrupted.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_2 0
+ORACLE_NONSPATIAL_2_START_TRANSACTION "$(ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_2)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_2 Transaction to Start Writing at:
+# ============================================================================
+# The following specifies how many features will be written to the database in
+# on each bulk write.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_2 200
+ORACLE_NONSPATIAL_2_CHUNK_SIZE "$(ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_2)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_2 Bulk Write Size:
+# ============================================================================
+# The following specifies how many features will be written to the database in
+# each transaction.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_2 1000
+ORACLE_NONSPATIAL_2_TRANSACTION_INTERVAL "$(ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_2)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_2 Features Per Transaction
+# ============================================================================
+# The following specifies an SQL command to execute before opening the first
+# ORACLE table.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_2 
+ORACLE_NONSPATIAL_2_BEGIN_SQL{0} "$(ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_2)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_2 MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL To Run Before Write
+# ============================================================================
+# The following specifies an SQL command to execute after closing all the
+# ORACLE tables.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_2 
+ORACLE_NONSPATIAL_2_END_SQL{0} "$(ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_2)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_2 MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL To Run After Write
+# ==============================================================================
+# The following specifies whether rows written to the writer's tables have
+# to adhere strictly to the destination feature type. When 'No' or 'Warn',
+# character columns are truncated to fit and other conversion problems end up
+# inserting NULL values; if STRICT_ATTR_CONVERSION is 'Yes', rows containing
+# such problems will be logged and not written to the tables.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_2 No
+ORACLE_NONSPATIAL_2_STRICT_ATTR_CONVERSION "$(ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_2)"
+GUI OPTIONAL CHOICE ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_2 Yes%No%Warn Enforce Strict Attribute Conversion:
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_COORDINATE_SYSTEM_GRANULARITY_ORACLE_NONSPATIAL_2 FEATURE
+ORACLE_NONSPATIAL_2_COORDINATE_SYSTEM_GRANULARITY "$(ORACLE_NONSPATIAL_OUT_COORDINATE_SYSTEM_GRANULARITY_ORACLE_NONSPATIAL_2)"
+# ============================================================================
+ORACLE_NONSPATIAL_2_GENERATE_FME_BUILD_NUM 22789
+# ==============================================================================
+# The following specifies the name of the Oracle Workspace that we should go
+# to when writing tables. Redefining just the GUI line as we can't bring up the
+# Oracle workspace picker in non-Settings box contexts.
+GUI OPTIONAL TEXT ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_2 Oracle Workspace:
+ORACLE_NONSPATIAL_2_DATASET "$(DestDataset_ORACLE_NONSPATIAL_2)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "ORACLE_NONSPATIAL_3"
+#! END_WB_HEADER
+#! START_DEST_HEADER ORACLE_NONSPATIAL ORACLE_NONSPATIAL_3
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_3 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER ORACLE_NONSPATIAL ORACLE_NONSPATIAL_3
+DEFAULT_MACRO DestDataset_ORACLE_NONSPATIAL_3 $(DestDataset_ORACLE_NONSPATIAL_4)
+GUI NAMED_DB_CONNECTION_ENCODED DestDataset_ORACLE_NONSPATIAL_3 FMT:ORACLE_NONSPATIAL Connection:
+ORACLE_NONSPATIAL_3_SERVER_TYPE ORACLE8i
+# New non-spatial Oracle Writers support case sensitive table names.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_UPPER_CASE_WRITER_TABLE_NAMES_ORACLE_NONSPATIAL_3 NO
+ORACLE_NONSPATIAL_3_UPPER_CASE_WRITER_TABLE_NAMES "$(ORACLE_NONSPATIAL_OUT_UPPER_CASE_WRITER_TABLE_NAMES_ORACLE_NONSPATIAL_3)"
+# ==============================================================================
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_3 
+GUI OPTIONAL DISCLOSUREGROUP ORACLE_NONSPATIAL_OUT_FME_CONNECTION_GROUP_ORACLE_NONSPATIAL_3 ORACLE_NONSPATIAL_OUT_NAMED_CONNECTION%ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_3%ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_3 Database Connection
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_3 
+ORACLE_NONSPATIAL_3_WORKSPACE "$(ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_3)"
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_3 YES
+ORACLE_NONSPATIAL_3_PERSISTENT_CONNECTION "$(ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_3)"
+GUI OPTIONAL CHECKBOX ORACLE_NONSPATIAL_OUT_PERSISTENT_CONNECTION_ORACLE_NONSPATIAL_3 YES%NO Persistent Connection:
+# ==============================================================================
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_3 
+GUI OPTIONAL DISCLOSUREGROUP ORACLE_NONSPATIAL_OUT_ORACLENONSPATIAL_WRT_ADV_PARA_ORACLE_NONSPATIAL_3 ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_3%ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_3%ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_3%ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_3%ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_3%ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_3 Advanced
+# ============================================================================
+# The following option specifies which feature number the writer should actually
+# start writing features to the database on. This should normally be zero, but
+# can be changed if a previous translation is interrupted.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_3 0
+ORACLE_NONSPATIAL_3_START_TRANSACTION "$(ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_3)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_START_TRANSACTION_ORACLE_NONSPATIAL_3 Transaction to Start Writing at:
+# ============================================================================
+# The following specifies how many features will be written to the database in
+# on each bulk write.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_3 200
+ORACLE_NONSPATIAL_3_CHUNK_SIZE "$(ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_3)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_CHUNK_SIZE_ORACLE_NONSPATIAL_3 Bulk Write Size:
+# ============================================================================
+# The following specifies how many features will be written to the database in
+# each transaction.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_3 1000
+ORACLE_NONSPATIAL_3_TRANSACTION_INTERVAL "$(ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_3)"
+GUI INTEGER ORACLE_NONSPATIAL_OUT_TRANSACTION_INTERVAL_ORACLE_NONSPATIAL_3 Features Per Transaction
+# ============================================================================
+# The following specifies an SQL command to execute before opening the first
+# ORACLE table.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_3 
+ORACLE_NONSPATIAL_3_BEGIN_SQL{0} "$(ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_3)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG ORACLE_NONSPATIAL_OUT_BEGIN_SQL{0}_ORACLE_NONSPATIAL_3 MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL To Run Before Write
+# ============================================================================
+# The following specifies an SQL command to execute after closing all the
+# ORACLE tables.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_3 
+ORACLE_NONSPATIAL_3_END_SQL{0} "$(ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_3)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG ORACLE_NONSPATIAL_OUT_END_SQL{0}_ORACLE_NONSPATIAL_3 MODE,SQL;FORMAT,ORACLE_NONSPATIAL SQL To Run After Write
+# ==============================================================================
+# The following specifies whether rows written to the writer's tables have
+# to adhere strictly to the destination feature type. When 'No' or 'Warn',
+# character columns are truncated to fit and other conversion problems end up
+# inserting NULL values; if STRICT_ATTR_CONVERSION is 'Yes', rows containing
+# such problems will be logged and not written to the tables.
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_3 No
+ORACLE_NONSPATIAL_3_STRICT_ATTR_CONVERSION "$(ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_3)"
+GUI OPTIONAL CHOICE ORACLE_NONSPATIAL_OUT_STRICT_ATTR_CONVERSION_ORACLE_NONSPATIAL_3 Yes%No%Warn Enforce Strict Attribute Conversion:
+DEFAULT_MACRO ORACLE_NONSPATIAL_OUT_COORDINATE_SYSTEM_GRANULARITY_ORACLE_NONSPATIAL_3 FEATURE
+ORACLE_NONSPATIAL_3_COORDINATE_SYSTEM_GRANULARITY "$(ORACLE_NONSPATIAL_OUT_COORDINATE_SYSTEM_GRANULARITY_ORACLE_NONSPATIAL_3)"
+# ============================================================================
+ORACLE_NONSPATIAL_3_GENERATE_FME_BUILD_NUM 22789
+# ==============================================================================
+# The following specifies the name of the Oracle Workspace that we should go
+# to when writing tables. Redefining just the GUI line as we can't bring up the
+# Oracle workspace picker in non-Settings box contexts.
+GUI OPTIONAL TEXT ORACLE_NONSPATIAL_OUT_WORKSPACE_ORACLE_NONSPATIAL_3 Oracle Workspace:
+ORACLE_NONSPATIAL_3_DATASET "$(DestDataset_ORACLE_NONSPATIAL_3)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+LOG_FILENAME "$(FME_MF_DIR)ASPH_LSR_PROF.log"
+LOG_APPEND NO
+LOG_FILTER_MASK -1
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+FME_NAMES_ENCODING UTF-8
+FME_BULK_MODE_THRESHOLD 2000
+LAST_SAVE_BUILD "FME 2022.2.3.0 (20230131 - Build 22789 - WIN64)"
+DEFAULT_MACRO DATASET_KEYWORD_CSV2_1 CSV2_1
+DEFAULT_MACRO DATASET_KEYWORD_CSV2_3 CSV2_3
+DEFAULT_MACRO DATASET_KEYWORD_ORACLE_NONSPATIAL_1 ORACLE_NONSPATIAL_1
+DEFAULT_MACRO DATASET_KEYWORD_ORACLE_NONSPATIAL_2 ORACLE_NONSPATIAL_2
+DEFAULT_MACRO DATASET_KEYWORD_ORACLE_NONSPATIAL_3 ORACLE_NONSPATIAL_3
+# -------------------------------------------------------------------------
+
+CSV2_1_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
+CSV2_3_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME ASPH_LSR_PROF
+MACRO FME_VIEWER_APP fmedatainspector
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory   FACTORY_NAME "Router and Unexpected Input Remover"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE CSV2 CSV2_1::CSV multi_reader_keyword,$(DATASET_KEYWORD_CSV2_1) TO FME_GENERIC ::CSV ALIAS_GEOMETRY    ROUTE CSV2 CSV2_3::CSV multi_reader_keyword,$(DATASET_KEYWORD_CSV2_3) TO FME_GENERIC ::CSV ALIAS_GEOMETRY    MERGE_INPUT Yes   OUTPUT ROUTED FEATURE_TYPE *
+CSV2_1_MERGE_DEF CSV2_1::CSV EXACT CSV DEFLINE fme_attribute_reading,defined,Filename,varchar<openparen>50<closeparen>,Order<space>of<space>Scan,varchar<openparen>5<closeparen>,Starting<space>Timestamp,varchar<openparen>16<closeparen>,Ending<space>Timestamp,varchar<openparen>16<closeparen>,Laser<space>beam<space>offset<openparen>mm<closeparen>,real32,Laser<space>beam<space>offset<space>locn,varchar<openparen>38<closeparen>,Laser<space>beam<space>vertical<space>meas.<space>Low<space>limit<openparen>mm<closeparen>,real32,Laser<space>beam<space>vertical<space>meas.<space>High<space>limit<openparen>mm<closeparen>,real32,Laser<space>beam<space>vertical<space>meas.<space>range<openparen>mm<closeparen>,real32,Carriage<space>Start<space>Position<openparen>mm<closeparen>,uint32,Carriage<space>End<space>Position<openparen>mm<closeparen>,uint32,Axle<space>Pos.<space>E-<gt>W<openparen>mm<closeparen>,uint32,Laser<space>Start<space>Position<openparen>mm<closeparen>,uint32,Notes,varchar<openparen>1<closeparen>
+CSV2_3_MERGE_DEF CSV2_3::CSV EXACT CSV DEFLINE fme_attribute_reading,defined,Day,varchar<openparen>3<closeparen>,Pass<space>Instance,varchar<openparen>4<closeparen>,Filename,varchar<openparen>49<closeparen>,Sample<space>Number,uint32,Horiz<openparen>mm<closeparen>=samp_no*<openparen>1384<solidus>8088<closeparen>,real64,Laser<space>reading<openparen>mm<closeparen>,real64,Laserbeam<space>locn<openparen>mm<closeparen>,uint32,Sampled<space>Time,varchar<openparen>20<closeparen>
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "CSV_CSV2_3 Splitter"    INPUT FEATURE_TYPE CSV      multi_reader_keyword $(DATASET_KEYWORD_CSV2_3)    OUTPUT FEATURE_TYPE CSV_CSV2_3
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "CSV_CSV2_1 Splitter"    INPUT FEATURE_TYPE CSV      multi_reader_keyword $(DATASET_KEYWORD_CSV2_1)    OUTPUT FEATURE_TYPE CSV_CSV2_1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+MACRO DatabaseJoiner_DIRECTIVES USE_UNIFIED_DATE_ATTRS YES SERVER_TYPE ORACLE8i REMOVE_SCHEMA_QUALIFIER NO SHOW_SYSTEM_TABLES NO NAMED_CONNECTION spr4713 CREATE_FEATURE_TABLES_FROM_DATA Yes PERSISTENT_CONNECTION YES QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes
+INCLUDE [    if { {MATCH_ALL} == {MATCH_ALL} } {       puts {MACRO DatabaseJoiner_ONE_FEATURE_PER_JOIN NO};    } else {       puts {MACRO DatabaseJoiner_ONE_FEATURE_PER_JOIN YES};    } ]
+FACTORY_DEF {*} JoinFactory    FACTORY_NAME { DatabaseJoiner }    INPUT  FEATURE_TYPE CSV_CSV2_3    READER_TYPE             { ORACLE_NONSPATIAL }    READER_DATASET          { "spr4713" }    TABLE_ID                { "C##SPR4713.ASPH_LSR_PROF_FILE_INFO" }    READER_PARAMS           { $(DatabaseJoiner_DIRECTIVES) }    JOIN_KEYS               { Filename<space>FILENAME }    ADDED_FIELDS            { ID }    COMBINE_ATTRIBUTES      { PREFER_ORIGINAL }    MATCH_RULE              { MATCH_ALL }    CACHE_SIZE              { 5000 }    PREFETCH_EXHAUSTIVE     { Yes }    ONE_FEATURE_PER_JOIN    { $(DatabaseJoiner_ONE_FEATURE_PER_JOIN) }    JOIN_ID                 { "DatabaseJoiner" }    REJECTION_ENABLED       YES    UNJOINED_ENABLED        YES    OUTPUT { JOINED FEATURE_TYPE DatabaseJoiner_JOINED       }    OUTPUT { REJECTED FEATURE_TYPE DatabaseJoiner_<REJECTED>       }
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TeeFactory FACTORY_NAME DatabaseJoiner_<Rejected> INPUT FEATURE_TYPE DatabaseJoiner_<REJECTED>  NO_LOGGING   OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, DatabaseJoiner<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME { AttributeManager_2 }    INPUT  FEATURE_TYPE DatabaseJoiner_JOINED    MULTI_FEATURE_MODE { NO }    NULL_ATTR_MODE { NO_OP }    ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV    ACTION_COLUMN 3    DEF_VAL_COLUMN 2    MISSING_INPUT_ATTR_HANDLING RENAME_SET_VALUE REMOVE    ATTR_ACTION { "Filename" "Filename" "" "REMOVE" }      ATTR_ACTION { "ID" "FILENAME_ID" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "_matched_records" "_matched_records" "" "REMOVE" }    OUTPUT { OUTPUT FEATURE_TYPE AttributeManager_2_OUTPUT        }
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME { AttributeManager }    INPUT  FEATURE_TYPE CSV_CSV2_1    MULTI_FEATURE_MODE { NO }    NULL_ATTR_MODE { NO_OP }    ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV    ACTION_COLUMN 3    DEF_VAL_COLUMN 2    MISSING_INPUT_ATTR_HANDLING RENAME_SET_VALUE REMOVE    OUTPUT { OUTPUT FEATURE_TYPE AttributeManager_OUTPUT        }
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC AttributeManager_2_OUTPUT TO ORACLE_NONSPATIAL __GO_TO_FINAL_OUTPUT_ROUTER__ <at>CopyAttributes<openparen>ENCODED<comma>DAY<comma>Day<comma>PASS_INSTANCE<comma>Pass<lt>space<gt>Instance<comma>SAMPLE_NUMBER<comma>Sample<lt>space<gt>Number<comma>HORIZ_MM_SAMP_NO_1384_8088<comma>Horiz<lt>openparen<gt>mm<lt>closeparen<gt>=samp_no*<lt>openparen<gt>1384<lt>solidus<gt>8088<lt>closeparen<gt><comma>LASER_READING<comma>Laser<lt>space<gt>reading<lt>openparen<gt>mm<lt>closeparen<gt><comma>LASERBEAM_LOCN_MM<comma>Laserbeam<lt>space<gt>locn<lt>openparen<gt>mm<lt>closeparen<gt><comma>SAMPLED_TIME<comma>Sampled<lt>space<gt>Time<closeparen>,multi_writer_id,2,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>ASPH_LSR_PROF_PROCESSED_DATA<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeManager_OUTPUT TO ORACLE_NONSPATIAL __GO_TO_FINAL_OUTPUT_ROUTER__ <at>CopyAttributes<openparen>ENCODED<comma>FILENAME<comma>Filename<comma>ORDER_OF_SCAN<comma>Order<lt>space<gt>of<lt>space<gt>Scan<comma>STARTING_TIMESTAMP<comma>Starting<lt>space<gt>Timestamp<comma>ENDING_TIMESTAMP<comma>Ending<lt>space<gt>Timestamp<comma>LASER_BEAM_OFFSET_MM<comma>Laser<lt>space<gt>beam<lt>space<gt>offset<lt>openparen<gt>mm<lt>closeparen<gt><comma>LASER_BEAM_OFFSET_LOCN<comma>Laser<lt>space<gt>beam<lt>space<gt>offset<lt>space<gt>locn<comma>LASER_BEAM_VERTICAL_MEAS_LOW_LIMIT_MM<comma>Laser<lt>space<gt>beam<lt>space<gt>vertical<lt>space<gt>meas.<lt>space<gt>Low<lt>space<gt>limit<lt>openparen<gt>mm<lt>closeparen<gt><comma>LASER_BEAM_VERTICAL_MEAS_HIGH_LIMIT_MM<comma>Laser<lt>space<gt>beam<lt>space<gt>vertical<lt>space<gt>meas.<lt>space<gt>High<lt>space<gt>limit<lt>openparen<gt>mm<lt>closeparen<gt><comma>LASER_BEAM_VERTICAL_MEAS_RANGE_MM<comma>Laser<lt>space<gt>beam<lt>space<gt>vertical<lt>space<gt>meas.<lt>space<gt>range<lt>openparen<gt>mm<lt>closeparen<gt><comma>CARRIAGE_START_POSITION_MM<comma>Carriage<lt>space<gt>Start<lt>space<gt>Position<lt>openparen<gt>mm<lt>closeparen<gt><comma>CARRIAGE_END_POSITION_MM<comma>Carriage<lt>space<gt>End<lt>space<gt>Position<lt>openparen<gt>mm<lt>closeparen<gt><comma>AXLE_POS_E_W_MM<comma>Axle<lt>space<gt>Pos.<lt>space<gt>E-<lt>gt<gt>W<lt>openparen<gt>mm<lt>closeparen<gt><comma>LASER_START_POSITION_MM<comma>Laser<lt>space<gt>Start<lt>space<gt>Position<lt>openparen<gt>mm<lt>closeparen<gt><comma>NOTES<comma>Notes<closeparen>,multi_writer_id,1,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>ASPH_LSR_PROF_FILE_INFO<closeparen> GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+
+# -------------------------------------------------------------------------
+ORACLE_NONSPATIAL_2_DEF ASPH_LSR_PROF_FILE_INFO   oracle_create_table          ""   oracle_drop_table            ""   oracle_table_writer_mode     ""   oracle_update_key_columns    ""   oracle_truncate_table        ""   fme_feature_operation        INSERT   fme_table_handling           CREATE_IF_MISSING   FILENAME                     varchar2(100)   ORDER_OF_SCAN                varchar2(10)   STARTING_TIMESTAMP           varchar2(20)   ENDING_TIMESTAMP             varchar2(20)   LASER_BEAM_OFFSET_MM         float   LASER_BEAM_OFFSET_LOCN       varchar2(100)   LASER_BEAM_VERTICAL_MEAS_LOW_LIMIT_MM float   LASER_BEAM_VERTICAL_MEAS_HIGH_LIMIT_MM float   LASER_BEAM_VERTICAL_MEAS_RANGE_MM float   CARRIAGE_START_POSITION_MM   number(6,0)   CARRIAGE_END_POSITION_MM     number(6,0)   AXLE_POS_E_W_MM              number(6,0)   LASER_START_POSITION_MM      number(6,0)   NOTES                        varchar2(100)
+# -------------------------------------------------------------------------
+ORACLE_NONSPATIAL_3_DEF ASPH_LSR_PROF_PROCESSED_DATA   oracle_create_table          ""   oracle_drop_table            ""   oracle_table_writer_mode     ""   oracle_update_key_columns    ""   oracle_truncate_table        ""   fme_feature_operation        INSERT   fme_table_handling           CREATE_IF_MISSING   DAY                          varchar2(10)   PASS_INSTANCE                varchar2(10)   SAMPLE_NUMBER                number   HORIZ_MM_SAMP_NO_1384_8088   float   LASER_READING                float   LASERBEAM_LOCN_MM            number   SAMPLED_TIME                 varchar2(20)   FILENAME_ID                  number
