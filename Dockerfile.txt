@@ -1,0 +1,21 @@
+# Use the official Python image from the Docker Hub
+FROM python:3.10-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y curl libusb-1.0 unzip
+RUN curl -O https://files.labjack.com/installers/LJM/Linux/x64/release/LabJack-LJM_2024-06-10.zip && \
+unzip LabJack-LJM_2024-06-10.zip && \
+cd LabJack-LJM_2024-06-10 && \
+./labjack_ljm_installer.run || true && \
+rm -rf LabJack-LJM_2024-06-10*
+
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+
+# Copy the Python script into the container
+COPY stream_T8.py .
+
+# Run the Python scrip
+CMD ["python", "stream_T8.py"]
