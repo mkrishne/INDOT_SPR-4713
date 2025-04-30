@@ -14,8 +14,13 @@ import pyarrow as pa
 import os
 from filelock import FileLock
 import pickle
+import shelve
 import pyarrow.ipc  # To serialize the RecordBatch to a byte stream
-
+import pyarrow.parquet as pq
+import io
+import zlib
+import msgpack
+import csv
 
 NATS_SERVER_IP = ["nats://127.0.0.1:4222"]
 
@@ -102,9 +107,9 @@ config_schema = {
                         },
                         "nats_stream_rate": {
                             "type": "integer",
-                            "minimum": 10,
-                            "maximum": 10000,
-                            "multipleOf": 10
+                            "minimum": 100,
+                            "maximum": 100000,
+                            "multipleOf": 100
                         }
                     },
                     "required": ["type", "name"]
@@ -116,30 +121,30 @@ config_schema = {
     "required": ["scan_rate", "gain", "STREAM_SETTLING_US", "STREAM_RESOLUTION_INDEX"]
 }
 
-async def nats_publish(topic: str, message: pa.Buffer):
+async def nats_publish(topic: str, payload: bytes, headers: dict):
     """
     Connects to the NATS server and publishes a message to the specified topic.
     
     Args:
         topic (str): The topic to publish the message to.
-        message (pa.Buffer): The message to be published (byte buffer).
+        payload (pa.Buffer): The message to be published (byte buffer).
+        headers (dict): Sampling info of the message
     """
     # Connect to NATS
     try:
         # Establish a connection to the NATS server
         nc = await nats.connect(NATS_SERVER_IP)
-        print(f"Connected to NATS server at {nc.connected_url}")
+        #print(f"Connected to NATS server at {nc.connected_url}")
 
         # Publish the message to the specified topic
-        await nc.publish(topic, message)
-        print(f"Message published to {topic}")
+        await nc.publish(topic, payload,headers=headers)
+        print(f"NATS Message published to {topic} with headers: {headers}")
 
         # Close the connection
         await nc.close()
 
     except Exception as e:
         print(f"Error while connecting or publishing to NATS: {e}")
-
 async def check_buffer_and_prepare_publish(queue):
     """
     This function will publish data to NATS. It will check if there is enough data in the buffer,
@@ -156,86 +161,79 @@ async def check_buffer_and_prepare_publish(queue):
     timestamp_data = {channel['name']: [] for channel in channel_details.values()}
     schemas = {}
     for channel in channel_details.values():
-        schema = pa.schema([pa.field('timestamp', pa.string()), pa.field(channel['name'], pa.float32())])
+        schema = pa.schema([pa.field(channel['name'], pa.float32())])
         schemas[channel['name']] = schema
     print(f"{serial_number} - Created schemas for all channels: {schemas}")
-    file_lock = FileLock(f"all_data_{serial_number}.pkl.lock")
+    is_first_sample = True
+    file_lock = FileLock(f"all_data_{serial_number}.lock")  # Create a file lock for the current channel
     try:
         while True:
-            if os.path.exists(f"all_data_{serial_number}.pkl") and os.path.getsize(f"all_data_{serial_number}.pkl") > 0:
-                #print("File exists, starting to process data...")
-
+            #if os.path.exists(f"{channel_name}_data.dat") and os.path.getsize(f"{channel_name}_data.dat") > 0:
+            if os.path.exists(f"all_data_{serial_number}.dat") and os.path.getsize(f"all_data_{serial_number}.dat") > 0:
+                print(f"File all_data_{serial_number}.dat exists, starting to process data...")
+                
                 with file_lock:
-                    with open(f"all_data_{serial_number}.pkl", "rb") as file:
-                        all_data_samples = []
-                        #print(f"Reading from file all_data_{serial_number}.pkl...")
-                        
-                        try:
-                            # Read all data samples (can read multiple samples in the file)
-                            while True:
-                                data_sample = pickle.load(file)  # Load data sample
-                                if data_sample:
-                                    all_data_samples.append(data_sample)
-                                    #print(f"Loaded data_sample: {data_sample}")  # Debug print
-                        except EOFError:
-                            # End of file reached
-                            #print(f"End of file reached for {serial_number}.")
-                            pass
-
-                    # After processing, clear the file
-                    with open(f"all_data_{serial_number}.pkl", "wb") as file:
-                        pass  # This clears the file content
-                        #print(f"Cleared the file all_data_{serial_number}.pkl.")
-
+                    with shelve.open(f"all_data_{serial_number}", flag='c') as shelf:
+                        #print(list(shelf.values()))
+                        all_data_samples = list(shelf.values())
+                        #print(f"Reading from file all_data_{serial_number}...")
+                               
+                    with shelve.open(f"all_data_{serial_number}", flag='n') as shelf:
+                        pass
                 # If data_samples is not empty, process the data
                 if all_data_samples:
-                    print(f"Processing {len(all_data_samples)} data samples...")
+                    #print(f"Processing {len(all_data_samples)} data samples...")
                     for data_sample in all_data_samples:
                         start_timestamp, aData = data_sample
-                        print(f"Processing data sample: {start_timestamp}, {aData[:5]}...")  # Show first 5 data points
+                        #print(f"Processing data sample: {start_timestamp}, {aData[:5]}...")  # Show first 5 data points
+                        #timestamp_all_channel = [start_timestamp + datetime.timedelta(seconds=sample_idx / scan_rate) for sample_idx in range(len(aData))]
                         
-                        timestamp_all_channel = [start_timestamp + datetime.timedelta(seconds=sample_idx / scan_rate) for sample_idx in range(len(aData))]
-                        print(f"Generated timestamps: {timestamp_all_channel[:5]}...")  # Show first 5 timestamps
-                        
+                        if is_first_sample:
+                            each_channel_start_timestamp = [start_timestamp + datetime.timedelta(seconds=sample_idx / scan_rate) for sample_idx in range(num_addresses)]
+                            per_channel_time_delta = datetime.timedelta(seconds=num_addresses / scan_rate)
+                            sample_interval = per_channel_time_delta.total_seconds()
+                            is_first_sample = False
                         for j, channel in enumerate(channel_details.values()):
                             channel_name = channel['name']
                             nats_stream_rate = channel['nats_stream_rate']
 
                             each_channel_data_samples = aData[j::num_addresses]
-                            each_channel_time_samples = [ts.strftime("%Y-%m-%d %H:%M:%S.%f") for ts in timestamp_all_channel[j::num_addresses]]
                             
                             #print(f"Distributing data for channel {channel_name}...")  # Debug print
                             channel_data[channel_name].extend(each_channel_data_samples)  # Distribute data across channels
-                            timestamp_data[channel_name].extend(each_channel_time_samples)
 
                             #print(f"Channel {channel_name}: {len(channel_data[channel_name])} data samples accumulated.")  # Debug print
                             
                             while len(channel_data[channel_name]) >= nats_stream_rate:
                                 #print(f"Processing batch for channel {channel_name}, size: {nats_stream_rate}")  # Debug print
-                                batch_data = [
-                                    pa.array(timestamp_data[channel_name][:nats_stream_rate], pa.string()),
-                                    pa.array(channel_data[channel_name][:nats_stream_rate], pa.float32())
-                                ]
-                                # Slice the data for publication
+                                batch_data = channel_data[channel_name][:nats_stream_rate]
+                                start_time_current_batch = each_channel_start_timestamp[j]
+                                each_channel_start_timestamp[j] = each_channel_start_timestamp[j] + (nats_stream_rate-1)*per_channel_time_delta
                                 channel_data[channel_name] = channel_data[channel_name][nats_stream_rate:]
-                                timestamp_data[channel_name] = timestamp_data[channel_name][nats_stream_rate:]
-                                current_channel_schema = schemas[channel['name']]
-                                batch = pa.RecordBatch.from_arrays(batch_data, schema=current_channel_schema)
-
-                                with pa.BufferOutputStream() as buffer_stream:
-                                    writer = pa.RecordBatchStreamWriter(buffer_stream, current_channel_schema)
-                                    writer.write_batch(batch)
-                                    writer.close()
-                                    # Get the byte data
-                                    serialized_data = buffer_stream.getvalue()
-
+                                #print(f"Start timestamp for batch {j}: {each_channel_start_timestamp[j]}")
+                                # Slice the data for publication
+                                
+                                
+                                serialized_data = msgpack.packb(batch_data)
+                                compressed_data = zlib.compress(serialized_data)
                                 nats_topic = f"channel.{channel_name}"
-                                print(f"Serializing and publishing {len(serialized_data)} bytes of data to {nats_topic}.")  # Debug print
-                                await nats_publish(nats_topic, serialized_data)
-                            
-                        print(f"Completed publishing for channel {channel_name}.")  # Debug print
+                                payload_info = {'start_timestamp' : start_time_current_batch.isoformat(), 
+                                                'sample_interval': str(sample_interval), 
+                                                'length' : str(nats_stream_rate)} 
+                                #print(f"Serializing and publishing {len(compressed_data)} bytes of data to {nats_topic} with header {payload_info}.")  
+                                await nats_publish(nats_topic, compressed_data, payload_info)
+                                '''
+                                timestamp_current_channel = [start_time_current_batch + datetime.timedelta(seconds=i * sample_interval) for i in range(nats_stream_rate)]
+                                csv_filename = f"{channel_name}.csv"
+                                with open(csv_filename, mode='a', newline='') as file:
+                                    writer = csv.writer(file)
+                                    for timestamp, value in zip(timestamp_current_channel, batch_data):
+                                        writer.writerow([timestamp, value])
+                                print(f"Batch data for channel {channel_name} written to {csv_filename}")
+                                '''
+
     except Exception as e:
-        print(f"Error while creating and publishing data: {e}")                    
+        print(f"Error while creating and publishing data: {e}")                     
                         
 async def get_each_labjack_config(serial_number, config):
     # Extract LabJack configuration details
@@ -264,6 +262,17 @@ async def get_each_labjack_config(serial_number, config):
     
     return stream_config, channel_details
 
+async def send_ping(nc):
+    """Send a ping to the NATS server every second to keep the connection alive."""
+    while True:
+        try:
+            # Flush to the NATS server to simulate a ping-like action
+            await nc.flush()
+            print("Connection is alive, flush sent to NATS server.")
+        except Exception as e:
+            print(f"Error during flush: {e}")
+        await asyncio.sleep(10)  # Wait for 15 second before sending the next "ping"
+        
 async def monitor_bucket():
     # Initialize NATS client
     nc = NATS()
@@ -271,6 +280,7 @@ async def monitor_bucket():
     try:
         await nc.connect(servers=NATS_SERVER_IP)  # Connect to the local NATS server
         print("connecting to jetstream")
+        asyncio.create_task(send_ping(nc))
         js = nc.jetstream()
         try:
             await js.account_info()  # This will fail if JetStream is not started
@@ -360,6 +370,7 @@ async def monitor_bucket():
                     # Check if the revision has changed
                     if last_revisions.get(update.key) == update.revision:
                         #print(f"No change in revision for key '{update.key}'. Skipping processing.")
+                        await asyncio.sleep(5)
                         continue
                     try:
                         # Update the last seen revision

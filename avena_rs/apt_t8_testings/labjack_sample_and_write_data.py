@@ -15,6 +15,7 @@ import pyarrow as pa
 import os
 from filelock import FileLock
 import pickle
+import shelve
 
 NATS_SERVER_IP = ["nats://127.0.0.1:4222"]
 
@@ -102,9 +103,9 @@ config_schema = {
                         },
                         "nats_stream_rate": {
                             "type": "integer",
-                            "minimum": 10,
-                            "maximum": 10000,
-                            "multipleOf": 10
+                            "minimum": 100,
+                            "maximum": 100000,
+                            "multipleOf": 100
                         }
                     },
                     "required": ["type", "name"]
@@ -134,26 +135,10 @@ async def start_labjack_sample(queue):
         
         print(f"{handle} - scansPerRead : {scansPerRead}")
         # Extract channel information directly from channel_details
-        '''
-        for channel in channel_details.values():
-            channel_name = channel['name']
-            
-            # Check if the file for the channel exists, and delete it if it does
-            file_path = f"{channel_name}_data.pkl"
-            if os.path.exists(file_path):
-                os.remove(file_path)  # Delete the file if it exists
-                print(f"Deleted existing file for {channel_name}")
-        '''
-        file_path = f"all_data_{serial_number}.pkl"
-        if os.path.exists(file_path):
-            os.remove(file_path)  # Delete the file if it exists
+        file_path = f"all_data_{serial_number}"
+        file_lock = FileLock(f"all_data_{serial_number}.lock")
+        with shelve.open(file_path, flag='n') as shelf:
             print(f"Deleted existing file for all_data")
-
-        with open(file_path, "wb") as file:
-            # Initialize with an empty list or any data you want to store
-            pickle.dump([], file)
-            print(f"Created new file: {file_path}")
-        
         actual_scan_rate = await asyncio.to_thread(ljm.eStreamStart, handle, int(scan_rate / num_addresses), num_addresses, aScanList, scan_rate)
         print(f"{handle} - Stream started with an actual scan rate of {actual_scan_rate} Hz.")
 
@@ -163,50 +148,31 @@ async def start_labjack_sample(queue):
         print(f"{handle} - Starting data sampling loop...")
 
         # Start reading data
-        end = datetime.datetime.now()
         while True:
-            print(f"{handle} - Reading data iteration {i}")
+            #print(f"{handle} - Reading data iteration {i}")
         
             # Asynchronously read data from the LabJack device
             try:
                 start = datetime.datetime.now()
-                tt = (start - end).seconds + float((start - end).microseconds) / 1000000 
-                print("Time taken prev to current pkt = %f seconds" % (tt))
-                #actual_scan_rate, aData = await asyncio.to_thread(ljm.streamBurst,handle, num_addresses, aScanList, scan_rate, scan_rate)
-
                 ret = await asyncio.to_thread(ljm.eStreamRead, handle)
-                end = datetime.datetime.now()
-                
+               
                 if not ret or len(ret) < 1:
                     print(f"{handle} - Error or empty data returned from eStreamRead.")
                     continue
                 aData = ret[0]
                 
-                #print(f"{handle} - Stream started with an actual scan rate of {actual_scan_rate} Hz.")
-                tt = (end - start).seconds + float((end - start).microseconds) / 1000000 
-                print("Time taken = %f seconds" % (tt))
-                '''
-                for j, channel in enumerate(channel_details.values()):
-                    channel_name = channel['name']
-                    data_samples = [start ,aData[j::num_addresses]]
-                    file_lock = FileLock(f"{channel_name}_data.json.lock")
-                    with file_lock:
-                        with open(f"{channel_name}_data.pkl", "ab") as file:
-                            # Write the entire data_samples list at once
-                            pickle.dump(data_samples, file)
-                '''
-                data_samples = [start,aData]
-                file_lock = FileLock(f"all_data_{serial_number}.pkl.lock")
+                file_lock = FileLock(f"all_data_{serial_number}.lock")
                 with file_lock:
-                    with open(f"all_data_{serial_number}.pkl", "ab") as file:
-                        # Write the entire data_samples list at once
-                        pickle.dump(data_samples, file)
+                    with shelve.open(file_path, writeback=True) as shelf:
+                        key = start.isoformat()
+                        shelf[key] = [start, aData]
+
             except Exception as e:
                 print(f"{handle} - Error during eStreamRead or processing: {e}")
                 await asyncio.to_thread(ljm.eStreamStop,handle)
                 i = 0
                 j = j+1
-                await asyncio.sleep(0.1) 
+                await asyncio.sleep(0.2) 
                 await asyncio.to_thread(ljm.eStreamStart, handle, int(scan_rate / num_addresses), num_addresses, aScanList, scan_rate)
             i += 1
             print(f"{handle} - Iteration {i,j} completed.")
@@ -215,8 +181,6 @@ async def start_labjack_sample(queue):
         ljm.close(handle)
         print(f"{handle} - cleaning handle:")
         raise
-
-
 
 async def set_labjack_config(serial_number, scan_rate, gain, stream_settling_us, stream_resolution_index, channels):
     """
@@ -348,6 +312,17 @@ async def configure_each_labjack(serial_number, config):
         print(f"Failed to configure LabJack serial_number: {e}")
         return None, None  # Explicitly return a fallback value
 
+async def send_ping(nc):
+    """Send a ping to the NATS server every second to keep the connection alive."""
+    while True:
+        try:
+            # Flush to the NATS server to simulate a ping-like action
+            await nc.flush()
+            print("Connection is alive, flush sent to NATS server.")
+        except Exception as e:
+            print(f"Error during flush: {e}")
+        await asyncio.sleep(15)  # Wait for 15 second before sending the next "ping"
+        
 # Function to manage LabJack devices and keys
 async def init_key_and_config():
     # Initialize NATS client
@@ -356,6 +331,7 @@ async def init_key_and_config():
     try:
         await nc.connect(servers=NATS_SERVER_IP)  # Connect to the local NATS server
         print("connecting to jetstream")
+        asyncio.create_task(send_ping(nc))
         js = nc.jetstream()
         try:
             await js.account_info()  # This will fail if JetStream is not started
@@ -445,6 +421,7 @@ async def init_key_and_config():
                     # Check if the revision has changed
                     if last_revisions.get(update.key) == update.revision:
                         #print(f"No change in revision for key '{update.key}'. Skipping processing.")
+                        await asyncio.sleep(5)
                         continue
                     try:
                         # Update the last seen revision
