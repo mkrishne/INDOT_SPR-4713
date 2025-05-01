@@ -145,6 +145,7 @@ async def nats_publish(topic: str, payload: bytes, headers: dict):
 
     except Exception as e:
         print(f"Error while connecting or publishing to NATS: {e}")
+        
 async def check_buffer_and_prepare_publish(queue):
     """
     This function will publish data to NATS. It will check if there is enough data in the buffer,
@@ -160,6 +161,7 @@ async def check_buffer_and_prepare_publish(queue):
     channel_data = {channel['name']: [] for channel in channel_details.values()}
     timestamp_data = {channel['name']: [] for channel in channel_details.values()}
     schemas = {}
+    print(f"Running check_buffer_and_prepare_publish task for {serial_number}")
     for channel in channel_details.values():
         schema = pa.schema([pa.field(channel['name'], pa.float32())])
         schemas[channel['name']] = schema
@@ -213,7 +215,6 @@ async def check_buffer_and_prepare_publish(queue):
                                 #print(f"Start timestamp for batch {j}: {each_channel_start_timestamp[j]}")
                                 # Slice the data for publication
                                 
-                                
                                 serialized_data = msgpack.packb(batch_data)
                                 compressed_data = zlib.compress(serialized_data)
                                 nats_topic = f"channel.{channel_name}"
@@ -222,6 +223,7 @@ async def check_buffer_and_prepare_publish(queue):
                                                 'length' : str(nats_stream_rate)} 
                                 #print(f"Serializing and publishing {len(compressed_data)} bytes of data to {nats_topic} with header {payload_info}.")  
                                 await nats_publish(nats_topic, compressed_data, payload_info)
+                                
                                 '''
                                 timestamp_current_channel = [start_time_current_batch + datetime.timedelta(seconds=i * sample_interval) for i in range(nats_stream_rate)]
                                 csv_filename = f"{channel_name}.csv"
@@ -231,10 +233,13 @@ async def check_buffer_and_prepare_publish(queue):
                                         writer.writerow([timestamp, value])
                                 print(f"Batch data for channel {channel_name} written to {csv_filename}")
                                 '''
-
+            else:
+                #print(f"Labjack {serial_number} not started yet")
+                await asyncio.sleep(0.5) #added to ensure other labjack tasks start/continue if no file exists
+                
     except Exception as e:
-        print(f"Error while creating and publishing data: {e}")                     
-                        
+        print(f"Error while creating and publishing data: {e}")                    
+                       
 async def get_each_labjack_config(serial_number, config):
     # Extract LabJack configuration details
     scan_rate = config["scan_rate"]
@@ -408,18 +413,21 @@ async def monitor_bucket():
                                 except asyncio.CancelledError:
                                     print(f"Task for serial {serial_number} was cancelled")
                             # Remove the task from the dictionary
-                            del tasks[serial_number]   
-                        stream_config, channel_details = await get_each_labjack_config(serial_number,active_configs[key_name])
-                        if stream_config is not None:
-                            print("LabJack configuration obtained successfully.")
-                            print("stream_config : ", stream_config)
-                            print("Channel Details : ", channel_details)
-                            queue = queues[serial_number]
-                            queue.put_nowait((stream_config, channel_details))
-                            tasks[serial_number] = asyncio.create_task(check_buffer_and_prepare_publish(queue))
-                            break
+                            del tasks[serial_number] 
+                            
+                        if serial_number in queues:
+                            stream_config, channel_details = await get_each_labjack_config(serial_number,active_configs[key_name])
+                            if stream_config is not None:
+                                print("LabJack configuration obtained successfully.")
+                                print("stream_config : ", stream_config)
+                                print("Channel Details : ", channel_details)
+                                queue = queues[serial_number]
+                                queue.put_nowait((stream_config, channel_details))
+                                tasks[serial_number] = asyncio.create_task(check_buffer_and_prepare_publish(queue))
+                            else:
+                                print(f"Failed to get configuration for LabJack with serial {serial_number})")
                         else:
-                            print(f"Failed to get configuration for LabJack with serial {serial_number})")
+                            print(f"skipping for labjack {serial_number} as it is not detected")
                     except Exception as e:
                         print(f"An unexpected error occurred: {e}")
     except ErrNoServers:

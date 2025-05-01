@@ -161,7 +161,6 @@ async def start_labjack_sample(queue):
                     continue
                 aData = ret[0]
                 
-                file_lock = FileLock(f"all_data_{serial_number}.lock")
                 with file_lock:
                     with shelve.open(file_path, writeback=True) as shelf:
                         key = start.isoformat()
@@ -461,20 +460,23 @@ async def init_key_and_config():
                             # Remove the task from the dictionary
                             del tasks[serial_number]   
                         #stream_config, channel_details = await configure_each_labjack(serial_number,active_configs[key_name])
-                        for attempt in range(max_labjack_config_retries):
-                            stream_config, channel_details = await configure_each_labjack(serial_number,active_configs[key_name])
-                            if stream_config is not None and stream_config.get("handle") is not None:
-                                print("LabJack configuration obtained successfully.")
-                                print("stream_config : ", stream_config)
-                                print("Channel Details : ", channel_details)
-                                print(f"Starting labjack_sample for serial number {serial_number}")
-                                queue = queues[serial_number]
-                                queue.put_nowait((stream_config, channel_details))
-                                tasks[serial_number] = asyncio.create_task(start_labjack_sample(queue))
-                                break
-                            else:
-                                print(f"Failed to configure LabJack for serial {serial_number} (attempt {attempt + 1}). Retrying...")
-                                await asyncio.sleep(1)  # Adjust the delay between retries as needed
+                        if serial_number in queues:
+                            for attempt in range(max_labjack_config_retries):
+                                stream_config, channel_details = await configure_each_labjack(serial_number,active_configs[key_name])
+                                if stream_config is not None and stream_config.get("handle") is not None:
+                                    print("LabJack configuration obtained successfully.")
+                                    print("stream_config : ", stream_config)
+                                    print("Channel Details : ", channel_details)
+                                    print(f"Starting labjack_sample for serial number {serial_number}")
+                                    queue = queues[serial_number]
+                                    queue.put_nowait((stream_config, channel_details))
+                                    tasks[serial_number] = asyncio.create_task(start_labjack_sample(queue))
+                                    break
+                                else:
+                                    print(f"Failed to configure LabJack for serial {serial_number} (attempt {attempt + 1}). Retrying...")
+                                    await asyncio.sleep(1)  # Adjust the delay between retries as needed
+                        else:
+                            print(f"skipping for labjack {serial_number} as it is not detected")
 
                         if attempt == max_labjack_config_retries - 1:
                             print(f"Failed to configure LabJack for serial {serial_number} after {max_labjack_config_retries} attempts. Skipping.")
